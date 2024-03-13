@@ -1,0 +1,836 @@
+		/*[fontph]*/ .Arial_12_000000__c { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 15px; color:#000000;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Arial_17_000080b_c { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 20px; color:#000080; font-weight:bold;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Arial_16_000000_i { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 19px; color:#000000; font-style:italic;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Arial_16_ffffff_i { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 19px; color:#ffffff; font-style:italic;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Verdana_26_8c73f2b__ { font-family: Verdana, Verdana, Verdana, Verdana, Verdana; font-size: 29px; color:#8c73f2; font-weight:bold;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Impact_12_000000b__ { font-family: Impact, Impact, Impact, Impact, Impact; font-size: 15px; color:#000000; font-weight:bold;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Verdana_31_ffffffb__ { font-family: Verdana, Verdana, Verdana, Verdana, Verdana; font-size: 34px; color:#ffffff; font-weight:bold;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Arial_14_ffffffbi { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 17px; color:#ffffff; font-weight:bold; font-style:italic;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Lucida_Console_14_c8c8ff___ { font-family: "Lucida Console", "Lucida Grande", "Courier New" , "Courier New" , "Courier New"; font-size: 17px; color:#c8c8ff;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Arial_16_ffffff__c { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 19px; color:#ffffff;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Arial_14_000080b_c { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 17px; color:#000080; font-weight:bold;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Arial_14_000080bi { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 17px; color:#000080; font-weight:bold; font-style:italic;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Lucida_Console_16_ffffff__l { font-family: "Lucida Console", "Lucida Grande", "Courier New" , "Courier New" , "Courier New"; font-size: 19px; color:#ffffff;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Arial_16_020250__c { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 19px; color:#020250;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Times_New_Roman_42_000000_i { font-family: "Times New Roman", Times, Baskerville, Georgia, serif; font-size: 45px; color:#000000; font-style:italic;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Arial_14_a204a2b_c { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 17px; color:#a204a2; font-weight:bold;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Arial_12_ffffff__c { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 15px; color:#ffffff;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Arial_16_000040_i { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 19px; color:#000040; font-style:italic;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Times_New_Roman_42_ffffff_i { font-family: "Times New Roman", Times, Baskerville, Georgia, serif; font-size: 45px; color:#ffffff; font-style:italic;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Arial_14_fee801b_c { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 17px; color:#fee801; font-weight:bold;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Arial_14_000040_i { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 17px; color:#000040; font-style:italic;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Arial_15_5d0186__c { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 18px; color:#5d0186;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Arial_16_000000b_c { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif; font-size: 19px; color:#000000; font-weight:bold;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Verdana_31_8c73f2b__ { font-family: Verdana, Verdana, Verdana, Verdana, Verdana; font-size: 34px; color:#8c73f2; font-weight:bold;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Lucida_Console_21_ffffffb_l { font-family: "Lucida Console", "Lucida Grande", "Courier New" , "Courier New" , "Courier New"; font-size: 24px; color:#ffffff; font-weight:bold;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Times_New_Roman_20_ff0000bi { font-family: "Times New Roman", Times, Baskerville, Georgia, serif; font-size: 23px; color:#ff0000; font-weight:bold; font-style:italic;white-space: nowrap; overflow: visible; }
+		/*[fontph]*/ .Verdana_26_ffffffb__ { font-family: Verdana, Verdana, Verdana, Verdana, Verdana; font-size: 29px; color:#ffffff; font-weight:bold;white-space: nowrap; overflow: visible; }
+
+
+.wvcach{
+	top:0px; 
+	left:0px; 
+	position:absolute; 
+	z-index:1; 
+	background-color:rgb(255,255,255);
+	font-size: 30px;
+	color:rgb(85,85,85);
+	display: flex; /* contexte sur le parent */
+	flex-direction: column; /* direction d'affichage verticale */
+	justify-content: center;
+}
+.wvseltext__{
+		-webkit-user-select: text;
+		-khtml-user-select: text;
+		-moz-user-select: text;
+		-ms-user-select: text;
+		user-select: text;
+}
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----sprite_edit30/pages_-----*/
+
+/*----anim__964741/sans_nom965812-----*/
+.cristalputer_html20_p256_f0{transform:translate(-29.0px,-18.0px) rotate(5.0deg) ;}
+.cristalputer_html20_p256_f1{transform:translate(-29.0px,-17.92px) rotate(4.75deg) ;}
+.cristalputer_html20_p256_f2{transform:translate(-29.0px,-17.85px) rotate(4.50deg) ;}
+.cristalputer_html20_p256_f3{transform:translate(-29.0px,-17.77px) rotate(4.25deg) ;}
+.cristalputer_html20_p256_f4{transform:translate(-29.0px,-17.70px) rotate(4.0deg) ;}
+.cristalputer_html20_p256_f5{transform:translate(-29.0px,-17.62px) rotate(3.75deg) ;}
+.cristalputer_html20_p256_f6{transform:translate(-29.0px,-17.54px) rotate(3.50deg) ;}
+.cristalputer_html20_p256_f7{transform:translate(-29.0px,-17.46px) rotate(3.25deg) ;}
+.cristalputer_html20_p256_f8{transform:translate(-29.0px,-17.39px) rotate(3.0deg) ;}
+.cristalputer_html20_p256_f9{transform:translate(-29.0px,-17.32px) rotate(2.75deg) ;}
+.cristalputer_html20_p256_f10{transform:translate(-29.0px,-17.25px) rotate(2.50deg) ;}
+.cristalputer_html20_p256_f11{transform:translate(-29.0px,-17.17px) rotate(2.25deg) ;}
+.cristalputer_html20_p256_f12{transform:translate(-29.0px,-17.10px) rotate(2.0deg) ;}
+.cristalputer_html20_p256_f13{transform:translate(-29.0px,-17.02px) rotate(1.75deg) ;}
+.cristalputer_html20_p256_f14{transform:translate(-29.0px,-16.95px) rotate(1.50deg) ;}
+.cristalputer_html20_p256_f15{transform:translate(-29.0px,-16.87px) rotate(1.25deg) ;}
+.cristalputer_html20_p256_f16{transform:translate(-29.0px,-16.79px) rotate(1.0deg) ;}
+.cristalputer_html20_p256_f17{transform:translate(-29.0px,-16.71px) rotate(0.75deg) ;}
+.cristalputer_html20_p256_f18{transform:translate(-29.0px,-16.64px) rotate(0.50deg) ;}
+.cristalputer_html20_p256_f19{transform:translate(-29.0px,-16.57px) rotate(0.25deg) ;}
+.cristalputer_html20_p256_f20{transform:translate(-29.0px,-16.50px) rotate(0.0deg) ;}
+.cristalputer_html20_p256_f21{transform:translate(-29.0px,-16.42px) rotate(-0.25deg) ;}
+.cristalputer_html20_p256_f22{transform:translate(-29.0px,-16.35px) rotate(-0.50deg) ;}
+.cristalputer_html20_p256_f23{transform:translate(-29.0px,-16.27px) rotate(-0.75deg) ;}
+.cristalputer_html20_p256_f24{transform:translate(-29.0px,-16.20px) rotate(-1.0deg) ;}
+.cristalputer_html20_p256_f25{transform:translate(-29.0px,-16.12px) rotate(-1.25deg) ;}
+.cristalputer_html20_p256_f26{transform:translate(-29.0px,-16.04px) rotate(-1.50deg) ;}
+.cristalputer_html20_p256_f27{transform:translate(-29.0px,-15.97px) rotate(-1.75deg) ;}
+.cristalputer_html20_p256_f28{transform:translate(-29.0px,-15.89px) rotate(-2.0deg) ;}
+.cristalputer_html20_p256_f29{transform:translate(-29.0px,-15.82px) rotate(-2.25deg) ;}
+.cristalputer_html20_p256_f30{transform:translate(-29.0px,-15.75px) rotate(-2.50deg) ;}
+.cristalputer_html20_p256_f31{transform:translate(-29.0px,-15.67px) rotate(-2.75deg) ;}
+.cristalputer_html20_p256_f32{transform:translate(-29.0px,-15.60px) rotate(-3.0deg) ;}
+.cristalputer_html20_p256_f33{transform:translate(-29.0px,-15.52px) rotate(-3.25deg) ;}
+.cristalputer_html20_p256_f34{transform:translate(-29.0px,-15.44px) rotate(-3.50deg) ;}
+.cristalputer_html20_p256_f35{transform:translate(-29.0px,-15.37px) rotate(-3.75deg) ;}
+.cristalputer_html20_p256_f36{transform:translate(-29.0px,-15.30px) rotate(-4.0deg) ;}
+.cristalputer_html20_p256_f37{transform:translate(-29.0px,-15.22px) rotate(-4.25deg) ;}
+.cristalputer_html20_p256_f38{transform:translate(-29.0px,-15.14px) rotate(-4.50deg) ;}
+.cristalputer_html20_p256_f39{transform:translate(-29.0px,-15.07px) rotate(-4.75deg) ;}
+.cristalputer_html20_p256_f40{transform:translate(-29.0px,-15.0px) rotate(-5.0deg) ;}
+.cristalputer_html20_p256_f41{transform:translate(-29.0px,-15.07px) rotate(-4.75deg) ;}
+.cristalputer_html20_p256_f42{transform:translate(-29.0px,-15.14px) rotate(-4.50deg) ;}
+.cristalputer_html20_p256_f43{transform:translate(-29.0px,-15.22px) rotate(-4.25deg) ;}
+.cristalputer_html20_p256_f44{transform:translate(-29.0px,-15.30px) rotate(-4.0deg) ;}
+.cristalputer_html20_p256_f45{transform:translate(-29.0px,-15.37px) rotate(-3.75deg) ;}
+.cristalputer_html20_p256_f46{transform:translate(-29.0px,-15.44px) rotate(-3.50deg) ;}
+.cristalputer_html20_p256_f47{transform:translate(-29.0px,-15.52px) rotate(-3.25deg) ;}
+.cristalputer_html20_p256_f48{transform:translate(-29.0px,-15.60px) rotate(-3.0deg) ;}
+.cristalputer_html20_p256_f49{transform:translate(-29.0px,-15.67px) rotate(-2.75deg) ;}
+.cristalputer_html20_p256_f50{transform:translate(-29.0px,-15.75px) rotate(-2.50deg) ;}
+.cristalputer_html20_p256_f51{transform:translate(-29.0px,-15.82px) rotate(-2.25deg) ;}
+.cristalputer_html20_p256_f52{transform:translate(-29.0px,-15.89px) rotate(-2.0deg) ;}
+.cristalputer_html20_p256_f53{transform:translate(-29.0px,-15.97px) rotate(-1.75deg) ;}
+.cristalputer_html20_p256_f54{transform:translate(-29.0px,-16.04px) rotate(-1.50deg) ;}
+.cristalputer_html20_p256_f55{transform:translate(-29.0px,-16.12px) rotate(-1.25deg) ;}
+.cristalputer_html20_p256_f56{transform:translate(-29.0px,-16.20px) rotate(-1.0deg) ;}
+.cristalputer_html20_p256_f57{transform:translate(-29.0px,-16.27px) rotate(-0.75deg) ;}
+.cristalputer_html20_p256_f58{transform:translate(-29.0px,-16.35px) rotate(-0.50deg) ;}
+.cristalputer_html20_p256_f59{transform:translate(-29.0px,-16.42px) rotate(-0.25deg) ;}
+.cristalputer_html20_p256_f60{transform:translate(-29.0px,-16.50px) rotate(0.0deg) ;}
+.cristalputer_html20_p256_f61{transform:translate(-29.0px,-16.57px) rotate(0.25deg) ;}
+.cristalputer_html20_p256_f62{transform:translate(-29.0px,-16.64px) rotate(0.50deg) ;}
+.cristalputer_html20_p256_f63{transform:translate(-29.0px,-16.71px) rotate(0.75deg) ;}
+.cristalputer_html20_p256_f64{transform:translate(-29.0px,-16.79px) rotate(1.0deg) ;}
+.cristalputer_html20_p256_f65{transform:translate(-29.0px,-16.87px) rotate(1.25deg) ;}
+.cristalputer_html20_p256_f66{transform:translate(-29.0px,-16.95px) rotate(1.50deg) ;}
+.cristalputer_html20_p256_f67{transform:translate(-29.0px,-17.02px) rotate(1.75deg) ;}
+.cristalputer_html20_p256_f68{transform:translate(-29.0px,-17.10px) rotate(2.0deg) ;}
+.cristalputer_html20_p256_f69{transform:translate(-29.0px,-17.17px) rotate(2.25deg) ;}
+.cristalputer_html20_p256_f70{transform:translate(-29.0px,-17.25px) rotate(2.50deg) ;}
+.cristalputer_html20_p256_f71{transform:translate(-29.0px,-17.32px) rotate(2.75deg) ;}
+.cristalputer_html20_p256_f72{transform:translate(-29.0px,-17.39px) rotate(3.0deg) ;}
+.cristalputer_html20_p256_f73{transform:translate(-29.0px,-17.46px) rotate(3.25deg) ;}
+.cristalputer_html20_p256_f74{transform:translate(-29.0px,-17.54px) rotate(3.50deg) ;}
+.cristalputer_html20_p256_f75{transform:translate(-29.0px,-17.62px) rotate(3.75deg) ;}
+.cristalputer_html20_p256_f76{transform:translate(-29.0px,-17.70px) rotate(4.0deg) ;}
+.cristalputer_html20_p256_f77{transform:translate(-29.0px,-17.77px) rotate(4.25deg) ;}
+.cristalputer_html20_p256_f78{transform:translate(-29.0px,-17.85px) rotate(4.50deg) ;}
+.cristalputer_html20_p256_f79{transform:translate(-29.0px,-17.92px) rotate(4.75deg) ;}
+.cristalputer_html20_p256_f80{transform:translate(-29.0px,-18.0px) rotate(5.0deg) ;}
+
+/*----sans_nom/sans_nom965812-----*/
+.cristalputer_html20_p257_f0{transform:translate(-29.0px,-18.0px) rotate(3.0deg) ;}
+.cristalputer_html20_p257_f1{transform:translate(-29.0px,-17.87px) rotate(2.87deg) ;}
+.cristalputer_html20_p257_f2{transform:translate(-29.0px,-17.76px) rotate(2.76deg) ;}
+.cristalputer_html20_p257_f3{transform:translate(-29.0px,-17.62px) rotate(2.63deg) ;}
+.cristalputer_html20_p257_f4{transform:translate(-29.0px,-17.52px) rotate(2.52deg) ;}
+.cristalputer_html20_p257_f5{transform:translate(-29.0px,-17.39px) rotate(2.40deg) ;}
+.cristalputer_html20_p257_f6{transform:translate(-29.0px,-17.28px) rotate(2.27deg) ;}
+.cristalputer_html20_p257_f7{transform:translate(-29.0px,-17.15px) rotate(2.16deg) ;}
+.cristalputer_html20_p257_f8{transform:translate(-29.0px,-17.04px) rotate(2.03deg) ;}
+.cristalputer_html20_p257_f9{transform:translate(-29.0px,-16.92px) rotate(1.92deg) ;}
+.cristalputer_html20_p257_f10{transform:translate(-29.0px,-16.79px) rotate(1.80deg) ;}
+.cristalputer_html20_p257_f11{transform:translate(-29.0px,-16.68px) rotate(1.67deg) ;}
+.cristalputer_html20_p257_f12{transform:translate(-29.0px,-16.54px) rotate(1.56deg) ;}
+.cristalputer_html20_p257_f13{transform:translate(-29.0px,-16.44px) rotate(1.43deg) ;}
+.cristalputer_html20_p257_f14{transform:translate(-29.0px,-16.31px) rotate(1.32deg) ;}
+.cristalputer_html20_p257_f15{transform:translate(-29.0px,-16.20px) rotate(1.20deg) ;}
+.cristalputer_html20_p257_f16{transform:translate(-29.0px,-16.07px) rotate(1.07deg) ;}
+.cristalputer_html20_p257_f17{transform:translate(-29.0px,-15.96px) rotate(0.96deg) ;}
+.cristalputer_html20_p257_f18{transform:translate(-29.0px,-15.84px) rotate(0.83deg) ;}
+.cristalputer_html20_p257_f19{transform:translate(-29.0px,-15.72px) rotate(0.72deg) ;}
+.cristalputer_html20_p257_f20{transform:translate(-29.0px,-15.60px) rotate(0.60deg) ;}
+.cristalputer_html20_p257_f21{transform:translate(-29.0px,-15.47px) rotate(0.47deg) ;}
+.cristalputer_html20_p257_f22{transform:translate(-29.0px,-15.35px) rotate(0.36deg) ;}
+.cristalputer_html20_p257_f23{transform:translate(-29.0px,-15.23px) rotate(0.23deg) ;}
+.cristalputer_html20_p257_f24{transform:translate(-29.0px,-15.11px) rotate(0.12deg) ;}
+.cristalputer_html20_p257_f25{transform:translate(-29.0px,-15.0px) rotate(0.0deg) ;}
+.cristalputer_html20_p257_f26{transform:translate(-29.0px,-14.88px) rotate(-0.12deg) ;}
+.cristalputer_html20_p257_f27{transform:translate(-29.0px,-14.76px) rotate(-0.24deg) ;}
+.cristalputer_html20_p257_f28{transform:translate(-29.0px,-14.64px) rotate(-0.35deg) ;}
+.cristalputer_html20_p257_f29{transform:translate(-29.0px,-14.52px) rotate(-0.47deg) ;}
+.cristalputer_html20_p257_f30{transform:translate(-29.0px,-14.39px) rotate(-0.60deg) ;}
+.cristalputer_html20_p257_f31{transform:translate(-29.0px,-14.27px) rotate(-0.72deg) ;}
+.cristalputer_html20_p257_f32{transform:translate(-29.0px,-14.15px) rotate(-0.84deg) ;}
+.cristalputer_html20_p257_f33{transform:translate(-29.0px,-14.03px) rotate(-0.95deg) ;}
+.cristalputer_html20_p257_f34{transform:translate(-29.0px,-13.92px) rotate(-1.07deg) ;}
+.cristalputer_html20_p257_f35{transform:translate(-29.0px,-13.80px) rotate(-1.20deg) ;}
+.cristalputer_html20_p257_f36{transform:translate(-29.0px,-13.68px) rotate(-1.32deg) ;}
+.cristalputer_html20_p257_f37{transform:translate(-29.0px,-13.55px) rotate(-1.44deg) ;}
+.cristalputer_html20_p257_f38{transform:translate(-29.0px,-13.44px) rotate(-1.55deg) ;}
+.cristalputer_html20_p257_f39{transform:translate(-29.0px,-13.31px) rotate(-1.67deg) ;}
+.cristalputer_html20_p257_f40{transform:translate(-29.0px,-13.19px) rotate(-1.80deg) ;}
+.cristalputer_html20_p257_f41{transform:translate(-29.0px,-13.07px) rotate(-1.92deg) ;}
+.cristalputer_html20_p257_f42{transform:translate(-29.0px,-12.96px) rotate(-2.04deg) ;}
+.cristalputer_html20_p257_f43{transform:translate(-29.0px,-12.84px) rotate(-2.15deg) ;}
+.cristalputer_html20_p257_f44{transform:translate(-29.0px,-12.71px) rotate(-2.27deg) ;}
+.cristalputer_html20_p257_f45{transform:translate(-29.0px,-12.60px) rotate(-2.40deg) ;}
+.cristalputer_html20_p257_f46{transform:translate(-29.0px,-12.47px) rotate(-2.52deg) ;}
+.cristalputer_html20_p257_f47{transform:translate(-29.0px,-12.36px) rotate(-2.64deg) ;}
+.cristalputer_html20_p257_f48{transform:translate(-29.0px,-12.23px) rotate(-2.75deg) ;}
+.cristalputer_html20_p257_f49{transform:translate(-29.0px,-12.11px) rotate(-2.87deg) ;}
+.cristalputer_html20_p257_f50{transform:translate(-29.0px,-12.0px) rotate(-3.0deg) ;}
+.cristalputer_html20_p257_f51{transform:translate(-29.0px,-12.11px) rotate(-2.87deg) ;}
+.cristalputer_html20_p257_f52{transform:translate(-29.0px,-12.23px) rotate(-2.76deg) ;}
+.cristalputer_html20_p257_f53{transform:translate(-29.0px,-12.35px) rotate(-2.63deg) ;}
+.cristalputer_html20_p257_f54{transform:translate(-29.0px,-12.47px) rotate(-2.52deg) ;}
+.cristalputer_html20_p257_f55{transform:translate(-29.0px,-12.60px) rotate(-2.40deg) ;}
+.cristalputer_html20_p257_f56{transform:translate(-29.0px,-12.72px) rotate(-2.27deg) ;}
+.cristalputer_html20_p257_f57{transform:translate(-29.0px,-12.84px) rotate(-2.16deg) ;}
+.cristalputer_html20_p257_f58{transform:translate(-29.0px,-12.96px) rotate(-2.03deg) ;}
+.cristalputer_html20_p257_f59{transform:translate(-29.0px,-13.07px) rotate(-1.92deg) ;}
+.cristalputer_html20_p257_f60{transform:translate(-29.0px,-13.19px) rotate(-1.80deg) ;}
+.cristalputer_html20_p257_f61{transform:translate(-29.0px,-13.31px) rotate(-1.67deg) ;}
+.cristalputer_html20_p257_f62{transform:translate(-29.0px,-13.44px) rotate(-1.56deg) ;}
+.cristalputer_html20_p257_f63{transform:translate(-29.0px,-13.55px) rotate(-1.43deg) ;}
+.cristalputer_html20_p257_f64{transform:translate(-29.0px,-13.68px) rotate(-1.32deg) ;}
+.cristalputer_html20_p257_f65{transform:translate(-29.0px,-13.80px) rotate(-1.20deg) ;}
+.cristalputer_html20_p257_f66{transform:translate(-29.0px,-13.92px) rotate(-1.07deg) ;}
+.cristalputer_html20_p257_f67{transform:translate(-29.0px,-14.03px) rotate(-0.96deg) ;}
+.cristalputer_html20_p257_f68{transform:translate(-29.0px,-14.15px) rotate(-0.83deg) ;}
+.cristalputer_html20_p257_f69{transform:translate(-29.0px,-14.27px) rotate(-0.72deg) ;}
+.cristalputer_html20_p257_f70{transform:translate(-29.0px,-14.39px) rotate(-0.60deg) ;}
+.cristalputer_html20_p257_f71{transform:translate(-29.0px,-14.52px) rotate(-0.47deg) ;}
+.cristalputer_html20_p257_f72{transform:translate(-29.0px,-14.64px) rotate(-0.36deg) ;}
+.cristalputer_html20_p257_f73{transform:translate(-29.0px,-14.76px) rotate(-0.23deg) ;}
+.cristalputer_html20_p257_f74{transform:translate(-29.0px,-14.88px) rotate(-0.12deg) ;}
+.cristalputer_html20_p257_f75{transform:translate(-29.0px,-15.0px) rotate(0.0deg) ;}
+.cristalputer_html20_p257_f76{transform:translate(-29.0px,-15.11px) rotate(0.12deg) ;}
+.cristalputer_html20_p257_f77{transform:translate(-29.0px,-15.23px) rotate(0.24deg) ;}
+.cristalputer_html20_p257_f78{transform:translate(-29.0px,-15.35px) rotate(0.35deg) ;}
+.cristalputer_html20_p257_f79{transform:translate(-29.0px,-15.47px) rotate(0.47deg) ;}
+.cristalputer_html20_p257_f80{transform:translate(-29.0px,-15.60px) rotate(0.60deg) ;}
+.cristalputer_html20_p257_f81{transform:translate(-29.0px,-15.72px) rotate(0.72deg) ;}
+.cristalputer_html20_p257_f82{transform:translate(-29.0px,-15.84px) rotate(0.84deg) ;}
+.cristalputer_html20_p257_f83{transform:translate(-29.0px,-15.96px) rotate(0.95deg) ;}
+.cristalputer_html20_p257_f84{transform:translate(-29.0px,-16.07px) rotate(1.07deg) ;}
+.cristalputer_html20_p257_f85{transform:translate(-29.0px,-16.20px) rotate(1.20deg) ;}
+.cristalputer_html20_p257_f86{transform:translate(-29.0px,-16.31px) rotate(1.32deg) ;}
+.cristalputer_html20_p257_f87{transform:translate(-29.0px,-16.44px) rotate(1.44deg) ;}
+.cristalputer_html20_p257_f88{transform:translate(-29.0px,-16.54px) rotate(1.55deg) ;}
+.cristalputer_html20_p257_f89{transform:translate(-29.0px,-16.68px) rotate(1.67deg) ;}
+.cristalputer_html20_p257_f90{transform:translate(-29.0px,-16.79px) rotate(1.80deg) ;}
+.cristalputer_html20_p257_f91{transform:translate(-29.0px,-16.92px) rotate(1.92deg) ;}
+.cristalputer_html20_p257_f92{transform:translate(-29.0px,-17.04px) rotate(2.04deg) ;}
+.cristalputer_html20_p257_f93{transform:translate(-29.0px,-17.15px) rotate(2.15deg) ;}
+.cristalputer_html20_p257_f94{transform:translate(-29.0px,-17.28px) rotate(2.27deg) ;}
+.cristalputer_html20_p257_f95{transform:translate(-29.0px,-17.39px) rotate(2.40deg) ;}
+.cristalputer_html20_p257_f96{transform:translate(-29.0px,-17.52px) rotate(2.52deg) ;}
+.cristalputer_html20_p257_f97{transform:translate(-29.0px,-17.62px) rotate(2.64deg) ;}
+.cristalputer_html20_p257_f98{transform:translate(-29.0px,-17.76px) rotate(2.75deg) ;}
+.cristalputer_html20_p257_f99{transform:translate(-29.0px,-17.87px) rotate(2.87deg) ;}
+.cristalputer_html20_p257_f100{transform:translate(-29.0px,-18.0px) rotate(3.0deg) ;}
+
+/*----sans_nom/pages_-----*/
+
+/*----sans_nom/pages_-----*/
+
+/*----sans_nom/pages_-----*/
+
+/*----sans_nom/pages_-----*/
+
+/*----sans_nom/pages_-----*/
+
+/*----sans_nom/pages_-----*/
+
+/*----sans_nom/pages_-----*/
+
+/*----sans_nom_530184/w_script_area-----*/
+.cristalputer_html20_p265_f0{transform:translate(1503.0px,9.0px) ;}
+.cristalputer_html20_p265_f1{transform:translate(1503.0px,9.0px) ;}
+.cristalputer_html20_p265_f2{transform:translate(1471.0px,9.0px) ;}
+.cristalputer_html20_p265_f3{transform:translate(1439.0px,9.0px) ;}
+.cristalputer_html20_p265_f4{transform:translate(1407.0px,9.0px) ;}
+.cristalputer_html20_p265_f5{transform:translate(1375.0px,9.0px) ;}
+.cristalputer_html20_p265_f6{transform:translate(1343.0px,9.0px) ;}
+.cristalputer_html20_p265_f7{transform:translate(1311.0px,9.0px) ;}
+.cristalputer_html20_p265_f8{transform:translate(1279.0px,9.0px) ;}
+.cristalputer_html20_p265_f9{transform:translate(1247.0px,9.0px) ;}
+.cristalputer_html20_p265_f10{transform:translate(1215.0px,9.0px) ;}
+.cristalputer_html20_p265_f11{transform:translate(1243.80px,9.0px) ;}
+.cristalputer_html20_p265_f12{transform:translate(1272.59px,9.0px) ;}
+.cristalputer_html20_p265_f13{transform:translate(1301.40px,9.0px) ;}
+.cristalputer_html20_p265_f14{transform:translate(1330.19px,9.0px) ;}
+.cristalputer_html20_p265_f15{transform:translate(1359.0px,9.0px) ;}
+.cristalputer_html20_p265_f16{transform:translate(1387.80px,9.0px) ;}
+.cristalputer_html20_p265_f17{transform:translate(1416.59px,9.0px) ;}
+.cristalputer_html20_p265_f18{transform:translate(1445.40px,9.0px) ;}
+.cristalputer_html20_p265_f19{transform:translate(1474.19px,9.0px) ;}
+.cristalputer_html20_p265_f20{transform:translate(1503.0px,9.0px) ;}
+.asminput{
+    background-color:black;
+}
+/*----sans_nom_530184/w_asm_onglet-----*/
+.cristalputer_html20_p266_f0{transform:translate(1478.0px,583.0px) ;}
+.cristalputer_html20_p266_f1{transform:translate(1478.0px,583.0px) ;}
+.cristalputer_html20_p266_f2{transform:translate(1446.22px,583.0px) ;}
+.cristalputer_html20_p266_f3{transform:translate(1414.44px,583.0px) ;}
+.cristalputer_html20_p266_f4{transform:translate(1382.66px,583.0px) ;}
+.cristalputer_html20_p266_f5{transform:translate(1350.88px,583.0px) ;}
+.cristalputer_html20_p266_f6{transform:translate(1319.11px,583.0px) ;}
+.cristalputer_html20_p266_f7{transform:translate(1287.32px,583.0px) ;}
+.cristalputer_html20_p266_f8{transform:translate(1255.55px,583.0px) ;}
+.cristalputer_html20_p266_f9{transform:translate(1223.77px,583.0px) ;}
+.cristalputer_html20_p266_f10{transform:translate(1192.0px,583.0px) ;}
+.cristalputer_html20_p266_f11{transform:translate(1220.66px,583.0px) ;}
+.cristalputer_html20_p266_f12{transform:translate(1249.32px,583.0px) ;}
+.cristalputer_html20_p266_f13{transform:translate(1278.0px,583.0px) ;}
+.cristalputer_html20_p266_f14{transform:translate(1306.66px,583.0px) ;}
+.cristalputer_html20_p266_f15{transform:translate(1335.33px,583.0px) ;}
+.cristalputer_html20_p266_f16{transform:translate(1364.0px,583.0px) ;}
+.cristalputer_html20_p266_f17{transform:translate(1392.66px,583.0px) ;}
+.cristalputer_html20_p266_f18{transform:translate(1421.33px,583.0px) ;}
+.cristalputer_html20_p266_f19{transform:translate(1450.0px,583.0px) ;}
+.cristalputer_html20_p266_f20{transform:translate(1478.0px,583.0px) ;}
+
+/*----sans_nom_530184/w_bt_asm_hide-----*/
+
+/*----sans_nom_530184/w_assembleur_title-----*/
+.cristalputer_html20_p268_f0{transform:translate(288.0px,0.0px) ;}
+.cristalputer_html20_p268_f1{transform:translate(283.0px,1.0px) ;}
+.cristalputer_html20_p268_f2{transform:translate(262.0px,-1.0px) ;}
+.cristalputer_html20_p268_f3{transform:translate(230.0px,-1.0px) ;}
+.cristalputer_html20_p268_f4{transform:translate(198.0px,-1.0px) ;}
+.cristalputer_html20_p268_f5{transform:translate(166.0px,-1.0px) ;}
+.cristalputer_html20_p268_f6{transform:translate(134.0px,-1.0px) ;}
+.cristalputer_html20_p268_f7{transform:translate(102.0px,-1.0px) ;}
+.cristalputer_html20_p268_f8{transform:translate(70.0px,-1.0px) ;}
+.cristalputer_html20_p268_f9{transform:translate(38.0px,-1.0px) ;}
+.cristalputer_html20_p268_f10{transform:translate(6.0px,-1.0px) ;}
+.cristalputer_html20_p268_f11{transform:translate(34.77px,-1.0px) ;}
+.cristalputer_html20_p268_f12{transform:translate(63.55px,-1.0px) ;}
+.cristalputer_html20_p268_f13{transform:translate(92.33px,-1.0px) ;}
+.cristalputer_html20_p268_f14{transform:translate(121.11px,-1.0px) ;}
+.cristalputer_html20_p268_f15{transform:translate(149.88px,-1.0px) ;}
+.cristalputer_html20_p268_f16{transform:translate(178.66px,-1.0px) ;}
+.cristalputer_html20_p268_f17{transform:translate(207.44px,-1.0px) ;}
+.cristalputer_html20_p268_f18{transform:translate(236.22px,-1.0px) ;}
+.cristalputer_html20_p268_f19{transform:translate(265.0px,-1.0px) ;}
+.cristalputer_html20_p268_f20{transform:translate(281.0px,3.0px) ;}
+.asmconsole{
+    background-color:black;
+}
