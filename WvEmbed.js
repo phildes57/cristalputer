@@ -30,6 +30,12 @@ String.prototype.wvVarC=function(varsP, startP){
 	return text_;
 }
 class WvEmbedEvent{}
+WvEmbedEvent.error=function(p){
+	let t =[];
+	for(let i=0; i<arguments.length;i++){t.push(arguments[i]);}
+	throw new Error(JSON.stringify(t));
+}
+
 /** §1
  * Exemple de fonction-embed synchrone appelée dans l'embed
  * Les erreurs sont traitée de façon classique par : throw new Error(votre_message_d-erreur);
@@ -607,7 +613,8 @@ class WvEmbedRequest{
 				if (result!=null && result!=undefined) o(result);
 			}  
 		).catch((e)=>{										// Intercepte les erreur levée par les fonctions-embed
-			alert(e=JSON.parse(e.message));
+			e=JSON.parse(e.message);
+			//alert(e);
 
 			if(Array.isArray(e)){							// L'erreur générée par la fonction embed est un tableau 
 				if(e.length>1){							// Il comporte des variables à intégrer

@@ -21,16 +21,32 @@ WvEmbedEvent.MESSAGES=[
 	"%1(message) * 'numOctet' doit être un nombre compris dans [0,%3] : %2\n format : numCase",
 	"%1(message) * 'script' inscrit dans la zone de sasie script, devrait etre un texte :\n /%2/",
 ];
-WvEmbedEvent.error=function(p){
-	let t =[];
-	for(let i=0; i<arguments.length;i++){t.push(arguments[i]);}
-	throw new Error(JSON.stringify(t));
-}
 WvEmbedEvent.refreshDisplay=function(messageP, returnP){AsmEditor.refreshDisplay();return true;};
+WvEmbedEvent.DISPLAY_TYPE = {
+	n:0,
+	d:0,
+	e:0,
+	h:1,
+	i:2,
+	b:2
+};
 WvEmbedEvent.displayType=function(messageP, returnP){
+	if(messageP===null || messageP===undefined) {
+		WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TYPE_DISPLAY], "<inconnu>");		
+	}
 	let n = parseInt(messageP);
-	if (isNaN(n) || n<0 || n>2) 
-		{throw new Error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TYPE_DISPLAY], messageP);} 
+	if(!isNaN(n)){
+		if (n<0 || n>2){n=-1;}
+	}else{
+		n=-1;
+		if(messageP.length && messageP.length>0){ 
+			n = WvEmbedEvent.DISPLAY_TYPE[messageP.substring(0,1).toLowerCase()];
+			if(n==null || n==undefined) n=-1;
+		}
+	}
+	if(n<0){
+		WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TYPE_DISPLAY], messageP);
+	}
 	AsmEditor.displayType(n);
 	return true;
 };

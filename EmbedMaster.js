@@ -1,5 +1,14 @@
 function EmbedMaster(){}
 EmbedMaster.test=function(){testA(); alert("Hello OK");}
+EmbedMaster.exec=async function(messageP, fonctionP){
+	try{													// Gestion des erreurs classique
+		let result = await window.wvEmbedRequest.postWait(messageP, fonctionP, 1000000);
+		alert("A fin "+result.answer);						// La réponse est placée dans le "retour"
+	}catch(e){
+		alert("ERROR \n"+e);								// Traitement des erreurs.
+	}														// - e : est un tableau 
+	//alert(messageP+" "+fonctionP);
+}
 /*********************************************************************************************************************
  *										 *Exemple* de script de messagerie asynchrone
  ********************************************************************************************************************/
