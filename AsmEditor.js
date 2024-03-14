@@ -21,15 +21,17 @@ WvEmbedEvent.MESSAGES=[
 	"%1(message) * 'numOctet' doit être un nombre compris dans [0,%3] : %2\n format : numCase",
 	"%1(message) * 'script' inscrit dans la zone de sasie script, devrait etre un texte :\n /%2/",
 ];
+/**
+ * Rafraichit les méémoires. 
+ * Aucun parammètre
+ */
 WvEmbedEvent.refreshDisplay=function(messageP, returnP){AsmEditor.refreshDisplay();return true;};
-WvEmbedEvent.DISPLAY_TYPE = {
-	n:0,
-	d:0,
-	e:0,
-	h:1,
-	i:2,
-	b:2
-};
+WvEmbedEvent.DISPLAY_TYPE = {n:0,d:0,e:0,h:1,i:2,b:2};
+/**
+ * Modife le type d'affichage : 
+ * Paramètre / String : 
+ * - message/type : 0=décimal,1=héxa et 2=interrupteurs
+ */
 WvEmbedEvent.displayType=function(messageP, returnP){
 	if(messageP===null || messageP===undefined) {
 		WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TYPE_DISPLAY], "<inconnu>");		
@@ -50,11 +52,27 @@ WvEmbedEvent.displayType=function(messageP, returnP){
 	AsmEditor.displayType(n);
 	return true;
 };
+/**
+ * Avance l'exécution du programme d'une instruction
+ * Aucun paramètre
+ */
 WvEmbedEvent.exe1step=function(messageP, returnP){AsmEditor.exe1step();return true;};
+/**
+ * Exécute le programme pas-à-pas
+ * Aucun paramètre
+ */
 WvEmbedEvent.exeStepByStepStop=function(messageP, returnP){AsmEditor.exeStepByStepStop();return true;};
+/**
+ * Exécute le programme jusqu'au point d'arrêt
+ * Aucun paramètre
+ */
 WvEmbedEvent.exe=function(messageP, returnP){AsmEditor.exe();return true;};
 /**
- * messageP = [[mems], start, end]
+ * Remplit une zone de la RAM
+ * Paramètres :
+ * - messageP / tableau = [[mems], start]
+ *		- mems : suite de nombres à placer dans la mémoire
+ * 		- position de départ de la pause 
  */
 WvEmbedEvent.tabVal2Ram=function(messageP, returnP, numType){
 	if(!Array.isArray(messageP)){
@@ -75,6 +93,10 @@ WvEmbedEvent.tabVal2Ram=function(messageP, returnP, numType){
 	AsmDatas.tabVal2Ram( tabOrgP , startP);
 	return true;
 }
+/**
+ * Ecrit une valeur dans une mémoire de la RAM.
+ * pramètre / tableau : [valeur 0 à 255, numOctet 0 à 255]
+ */
 WvEmbedEvent.ramSet=function(messageP, returnP){
 	if(!Array.isArray(messageP) || messageP.length!=2){
 		WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_VAL_CASE], "ramPutValue", messageP); 		
@@ -87,6 +109,10 @@ WvEmbedEvent.ramSet=function(messageP, returnP){
 	AsmDatas.ramPutValue( val , octetNum);
 	return true;
 }
+/**
+ * Ecrit une valeur dans un registre.
+ * pramètre / tableau : [valeur, numRegistre 0à7]
+ */
 WvEmbedEvent.regSet=function(messageP, returnP){
 	if(!Array.isArray(messageP) || messageP.length!=2){
 		WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_VAL_CASE], "regPutValue", messageP); 		
@@ -99,9 +125,9 @@ WvEmbedEvent.regSet=function(messageP, returnP){
 	AsmDatas.regPutValue( val , octetNum);
 	return true;
 }
-
 /**
- * Paramètre 
+ * Lit la valeur d'une mémoire de la RAM
+ * Paramètre / String
  * - int octetNum : numéro d'octet à lire
  */
 WvEmbedEvent.ramGetValue=function(messageP, returnP){
@@ -111,6 +137,11 @@ WvEmbedEvent.ramGetValue=function(messageP, returnP){
 	}
 	return AsmDatas.ramGetValue(octetNum);
 }
+/**
+ * Lit la valeur d(un registre
+ * Paramètre / String
+ * - int regNum : numéro d'octet à lire
+ */
 WvEmbedEvent.regGetValue=function(messageP, returnP){
 	let octetNum = parseInt(messageP);	
 	if(isNaN(octetNum) || octetNum<0 || octetNum>7){
@@ -118,15 +149,29 @@ WvEmbedEvent.regGetValue=function(messageP, returnP){
 	}
 	return AsmDatas.regGetValue(octetNum);
 }
-WvEmbedEvent.scriptRead=function(messageP, returnP){
+/**
+ * Lit le programme inscrit dans la zone script 
+ * Aucun paramètre
+ */
+WvEmbedEvent.scriptRead=function(){
 	return AsmEditor.scriptRead();
 }
+/**
+ * Ecrit un programme dans la zone script 
+ * Paramètre / string
+ * - Texte à écrire dans la zone script
+ */
 WvEmbedEvent.scriptWrite=function(scriptP, returnP){
 	if(typeof scriptP !== 'string'){
 		WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_SCRIPT_ERROR], "scriptWrite", scriptP);		
 	}
 	return AsmEditor.scriptWrite(scriptP);
 }
+/**
+ * Compile le programme inscrit dans la zone script 
+ * Paramètre / string
+ * - Texte à écrire dans la zone script
+ */
 WvEmbedEvent.scriptCompiler=function(messageP, returnP){
 	if(typeof scriptP === 'string'){
 		return AsmEditor.scriptCompiler( scriptP );

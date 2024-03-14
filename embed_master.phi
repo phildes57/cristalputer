@@ -29,10 +29,10 @@ PhListGroupAccess="_EAnim.FensVolantes.FenWithSpecificComponent.PhListGroupAcces
 <scale>1000</scale>
 <url_js>"! (No url)\ "</url_js>
 <projet><fond>1600 900 255 255 255 61</fond>
-<attrs>16 1 19 -1 -1 3 </attrs>
+<attrs>16 1 27 -1 -1 3 </attrs>
 </projet><composants><newlib><librairi>
 <libattrs>fond_opaque nom_var_not_globales</libattrs>
-<attrs>120 117</attrs>
+<attrs>160 158</attrs>
 </librairi>
 </newlib><table>
 
@@ -47,7 +47,7 @@ PhListGroupAccess="_EAnim.FensVolantes.FenWithSpecificComponent.PhListGroupAcces
 <Ph_Sprite>
 <id>1 11 "ecrandebase" 1
 </id>
-<attrs>100 4 10 1  1024 </attrs>
+<attrs>100 6 10 1  1024 </attrs>
 <tabobj><table>
 0 <Ph_Piece><id>-1 15 "w_cristalputer" 0
 </id>
@@ -60,12 +60,12 @@ PhListGroupAccess="_EAnim.FensVolantes.FenWithSpecificComponent.PhListGroupAcces
 </piste>
 <piste><attrs> 0 1</attrs>
 <table>
-0 <PhKey>1 108</PhKey>
+0 <PhKey>1 111</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 2</attrs>
 <table>
-0 <PhKey>1 146</PhKey>
+0 <PhKey>1 145</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 3</attrs>
@@ -271,17 +271,75 @@ PhListGroupAccess="_EAnim.FensVolantes.FenWithSpecificComponent.PhListGroupAcces
 </piste>
 </table>
 </Ph_Piece>
-</table>
-<couchtab><attrs>10 4</attrs>
+
+5 <Ph_Piece><id>-1 15 "w_text_input" 0
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 22020096 X X X X 0 0 0 0 0 </attrs>
 <table>
-0 <couche> 0 3 0</couche>
-1 <couche> 0 0 1</couche>
-2 <couche> 0 2 2</couche>
-3 <couche> 0 1 3</couche>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 124</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 28</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 96</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 5</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+</table>
+<couchtab><attrs>10 6</attrs>
+<table>
+0 <couche> 0 4 0</couche>
+1 <couche> 0 1 1</couche>
+2 <couche> 0 3 2</couche>
+3 <couche> 0 2 3</couche>
+4 <null></null>
+
+5 <couche> 0 0 5</couche>
 </table>
 </couchtab>
 </tabobj>
-<face_common><css>"""""""""""                                                                         /*refresh*/WvBubblePlayer.refreshMax=1;/*refresh*/"""""
+<face_common><css>"""""""""""                                                                          /*refresh*/WvBubblePlayer.refreshMax=1;/*refresh*/"""""
 </css>
 </face_common> </Ph_Sprite>
 
@@ -351,65 +409,10 @@ _xMouse 1 508
 </table>
 </Ph_Piece>
 
-1 <Ph_Piece><id>-1 15 "sans_nom5" 0
-</id>
-<attrs>1 1 1 4 0 -1 0 0 0 0 22020096 X X X X 0 0 0 0 0 </attrs>
-<table>
-<piste><attrs> 0 0</attrs>
-<table>
-0 <PhKey>1 5</PhKey>
-</table>
-</piste>
-<piste><attrs> 0 1</attrs>
-<table>
-0 <PhKey>1 1118</PhKey>
-</table>
-</piste>
-<piste><attrs> 0 2</attrs>
-<table>
-0 <PhKey>1 616</PhKey>
-</table>
-</piste>
-<piste><attrs> 0 3</attrs>
-<table>
-0 <PhKey>1 1</PhKey>
-</table>
-</piste>
-<piste><attrs> 0 4</attrs>
-<table>
-</table>
-</piste>
-<piste><attrs> 0 5</attrs>
-<table>
-</table>
-</piste>
-<piste><attrs> 0 6</attrs>
-<table>
-</table>
-</piste>
-<piste><attrs> 0 7</attrs>
-<table>
-</table>
-</piste>
-<piste><attrs> 0 8</attrs>
-<table>
-</table>
-</piste>
-<piste><attrs> 0 9</attrs>
-<table>
-</table>
-</piste>
-<piste><attrs> 0 10</attrs>
-<table>
-</table>
-</piste>
-</table>
-</Ph_Piece>
-
 2 <Ph_Piece><id>-1 15 "sans_nom102" 0
 <options>
-_yMouse 1 10
-_xMouse 1 83
+_yMouse 1 6
+_xMouse 1 79
 </options>
 </id>
 <attrs>1 1 1 5 0 -1 0 0 0 0 22020096 X X X X 0 0 0 0 0 </attrs>
@@ -421,12 +424,12 @@ _xMouse 1 83
 </piste>
 <piste><attrs> 0 1</attrs>
 <table>
-0 <PhKey>1 50</PhKey>
+0 <PhKey>1 170</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 2</attrs>
 <table>
-0 <PhKey>1 50</PhKey>
+0 <PhKey>1 -108</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 3</attrs>
@@ -525,10 +528,11 @@ _xMouse 1 83
 </table>
 <couchtab><attrs>10 4</attrs>
 <table>
-0 <couche> 0 3 0</couche>
-1 <couche> 0 0 1</couche>
-2 <couche> 0 2 2</couche>
-3 <couche> 0 1 3</couche>
+0 <couche> 0 2 0</couche>
+1 <null></null>
+
+2 <couche> 0 1 2</couche>
+3 <couche> 0 0 3</couche>
 </table>
 </couchtab>
 </tabobj>
@@ -554,10 +558,6 @@ Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
 
 
 //------- Compos # 5 -------------------------------
-<fillrect><id>5 4 "sans_nom5" 0
-</id>
-<coords>0 0 120 60 non_icon</coords>
-1 0 0 0 1</fillrect>
 
 
 //------- Compos # 6 -------------------------------
@@ -1221,8 +1221,8 @@ Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
 <tabobj><table>
 0 <Ph_Piece><id>-1 15 "value" 0
 <options>
-_yMouse 1 7
-_xMouse 1 74
+_yMouse 1 109
+_xMouse 1 101
 </options>
 </id>
 <attrs>1 1 1 5 0 -1 0 0 0 0 0 _flag2 32767 "" "" X X 0 0 0 0 0 </attrs>
@@ -1542,7 +1542,7 @@ _xMouse 1 170
 //------- Compos # 37 -------------------------------
 <txtaff><id>37 2 "sans_nom" 0
 </id>
-<coords>0 0 135 15 non_icon</coords>
+<coords>0 0 135 135 non_icon</coords>
 <txtstyle>"nulledit" "Arial" 10 0 0 0 0 0 0 "Arial"</txtstyle>
 <txttab><attrs>1 1</attrs>
 "Inscrivez votre texte ici,"
@@ -3677,8 +3677,8 @@ Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
 <tabobj><table>
 0 <Ph_Piece><id>-1 15 "value" 0
 <options>
-_yMouse 1 10
-_xMouse 1 16
+_yMouse 1 11
+_xMouse 1 6
 </options>
 </id>
 <attrs>1 1 1 5 0 -1 0 0 0 0 0 _flag2 32767 "" "" X X 0 0 0 0 0 </attrs>
@@ -5865,6 +5865,2467 @@ Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
 </id>
 <coords>0 0 51 19 non_icon</coords>
 6 255 255 255 1</fillrect>
+
+
+//------- Compos # 117 -------------------------------
+<Ph_Sprite>
+<id>117 11 "control_bar" 1
+</id>
+<attrs>100 9 10 1  1536 </attrs>
+<tabobj><table>
+0 <Ph_Piece><id>-1 15 "_paneldesc_phi" 0
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 118</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+1 <Ph_Piece><id>-1 15 "_panelarea_phi" 0
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 119</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 1</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+2 <Ph_Piece><id>-1 15 "sans_nom257" 0
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 120</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 5</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 7</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 2</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+3 <Ph_Piece><id>-1 15 "sans_nom258" 0
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 121</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 3</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+4 <Ph_Piece><id>-1 15 "sans_nom0" 0
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 128</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 1</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 4</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+5 <Ph_Piece><id>-1 15 "sans_nom1" 0
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 129</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 4</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 6</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 5</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+6 <Ph_Piece><id>-1 15 "button_on_off" 0
+<AttrsEditor>
+"libelle_for_import(&quot;barre-de-commande/    bouton on|off&quot;);"
+<Params> 0 </Params>
+</AttrsEditor>
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 0 "" "" "libelle_for_import(\"barre-de-commande/    bouton on|off\");"X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 138</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 81</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 98</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 6</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+7 <Ph_Piece><id>-1 15 "sans_nom2091" 0
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 122</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 6</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 100</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 7</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+8 <Ph_Piece><id>-1 15 "sans_nom2" 0
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 157</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 6</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 130</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 8</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+</table>
+<couchtab><attrs>30 9</attrs>
+<table>
+0 <couche> 0 6 0</couche>
+1 <couche> 0 7 1</couche>
+2 <couche> 0 5 2</couche>
+3 <couche> 0 4 3</couche>
+4 <couche> 0 3 4</couche>
+5 <couche> 0 8 5</couche>
+6 <couche> 0 2 6</couche>
+7 <couche> 0 1 7</couche>
+8 <couche> 0 0 8</couche>
+</table>
+</couchtab>
+</tabobj>
+</Ph_Sprite>
+
+
+//------- Compos # 118 -------------------------------
+<txtaff><id>118 2 "_paneldesc_phi" 0
+</id>
+<coords>0 0 37 34 non_icon</coords>
+<txtstyle>"sans_nom255" "SansSerif" 10 0 0 0 121 121 159 "SansSerif"</txtstyle>
+<txttab><attrs>2 2</attrs>
+"BAR"
+"INDEX"
+</txttab>
+Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
+
+
+//------- Compos # 119 -------------------------------
+<fillrect><id>119 4 "_panelarea_phi" 0
+</id>
+<coords>0 0 120 60 non_icon</coords>
+0 128 128 255 1</fillrect>
+
+
+//------- Compos # 120 -------------------------------
+<txtaff><id>120 2 "txt" 0
+</id>
+<coords>0 0 111 84 non_icon</coords>
+<txtstyle>"sans_nom256" "SansSerif" 30 0 0 0 121 121 159 "SansSerif"</txtstyle>
+<txttab><attrs>2 2</attrs>
+" Saisie"
+"de texte"
+</txttab>
+Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
+
+
+//------- Compos # 121 -------------------------------
+<ligne><id>121 3 "sans_nom259" 0
+</id>
+<coords>0 0 0 1022 non_icon</coords>
+0 1022 255 255 255 1 1 0</ligne>
+
+
+//------- Compos # 122 -------------------------------
+<txtaff><id>122 2 "txt" 0
+</id>
+<coords>0 0 73 15 non_icon</coords>
+<txtstyle>"sans_nom2090" "SansSerif" 8 0 0 0 121 121 159 "SansSerif"</txtstyle>
+<txttab><attrs>1 1</attrs>
+"Une seule ligne"
+</txttab>
+Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
+
+
+//------- Compos # 123 -------------------------------
+<txtaff><id>123 2 "txt" 0
+</id>
+<coords>0 0 339 51 non_icon</coords>
+<txtstyle>"sans_nom114" "SansSerif" 10 0 0 0 121 121 159 "SansSerif"</txtstyle>
+<txttab><attrs>3 3</attrs>
+"Pour d&eacute;finir le type de saisie - modifier le nom du rectangle"
+"- input : pour une saisie d&apos;une seule ligne"
+"- textarea : pour plusieurs lignes"
+</txttab>
+Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
+
+
+//------- Compos # 124 -------------------------------
+<Ph_Sprite>
+<id>124 11 "sans_nom" 1
+</id>
+<attrs>100 5 10 129  1026 <SpriteFile> "$prog$user/formulaire/" "form_input.phi" </SpriteFile> </attrs>
+<tabobj><table>
+0 <Ph_Piece><id>-1 15 "value" 0
+</id>
+<attrs>1 1 1 5 0 -1 0 0 0 0 0 _flag2 32767 "" "" X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 125</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+0 <actScript>20 0 <ActionInfos> 804000 </ActionInfos>   1
+"(onHtml5)=onChange={:<br>    console.log(&quot;Hello word&quot;);<br>};<br>"
+</actScript>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+1 <Ph_Piece><id>-1 15 "adjust" 0
+<options>
+_yMouse 1 15
+_xMouse 1 36
+</options>
+<AttrsEditor>
+"adjust();"
+<Params> 0 </Params>
+</AttrsEditor>
+</id>
+<attrs>1 0 1 6 0 -1 0 0 0 0 2 _flag2 13349 "" "" "adjust();"X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 126</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 1</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+0 <actScript>20 1 <ActionInfos> 804000 </ActionInfos>   0
+</actScript>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+0 <PhKey>1 100</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+2 <Ph_Piece><id>-1 15 "sans_nom115" 0
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 1026 "" "" X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 123</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 5</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 20</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 7</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+3 <Ph_Piece><id>-1 15 "control_bar" 0
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 1026 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 117</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 6</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+4 <Ph_Piece><id>-1 15 "textarea" 0
+<options>
+_yMouse 1 15
+_xMouse 1 36
+</options>
+<AttrsEditor>
+"align(0,null,0,null,null,null,null,null,null,1000,null,1000,null);"
+<Params> 0 </Params>
+</AttrsEditor>
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 2 "" "" "align(0,null,0,null,null,null,null,null,null,1000,null,1000,null);"X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 127</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 4</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+</table>
+<couchtab><attrs>10 8</attrs>
+<table>
+0 <couche> 0 2 0</couche>
+1 <couche> 0 3 1</couche>
+2 <null></null>
+
+3 <null></null>
+
+4 <couche> 0 4 4</couche>
+5 <null></null>
+
+6 <couche> 0 0 3</couche>
+7 <couche> 0 1 2</couche>
+</table>
+</couchtab>
+</tabobj>
+</Ph_Sprite>
+
+
+//------- Compos # 125 -------------------------------
+<txtaff><id>125 2 "sans_nom" 0
+</id>
+<coords>0 0 123 220 non_icon</coords>
+<txtstyle>"nulledit" "Arial" 16 0 0 0 0 0 0 "Arial"</txtstyle>
+<txttab><attrs>10 10</attrs>
+"refreshDisplay"
+"displayType"
+"scriptCompiler"
+"scriptWrite"
+"scriptRead"
+"regGetValue"
+"ramGetValue"
+"regSet"
+"ramSet"
+"tabVal2Ram"
+</txttab>
+Variable Saisie <var_name>"*"</var_name></txtaff>
+
+
+//------- Compos # 126 -------------------------------
+<fillrect><id>126 4 "sans_nom" 0
+</id>
+<coords>0 0 184 290 non_icon</coords>
+0 0 0 0 1</fillrect>
+
+
+//------- Compos # 127 -------------------------------
+<fillrect><id>127 4 "textarea" 0
+</id>
+<coords>0 0 184 290 non_icon</coords>
+0 192 192 206 1</fillrect>
+
+
+//------- Compos # 128 -------------------------------
+<ligne><id>128 3 "sans_nom" 0
+</id>
+<coords>0 0 0 1022 non_icon</coords>
+0 1022 230 230 252 1 1 0</ligne>
+
+
+//------- Compos # 129 -------------------------------
+<txtaff><id>129 2 "sans_nom" 0
+</id>
+<coords>0 0 111 84 non_icon</coords>
+<txtstyle>"sans_nom256" "SansSerif" 30 0 0 0 255 255 255 "SansSerif"</txtstyle>
+<txttab><attrs>2 2</attrs>
+" Saisie"
+"de texte"
+</txttab>
+Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
+
+
+//------- Compos # 130 -------------------------------
+<fillrect><id>130 4 "adjust" 0
+</id>
+<coords>0 0 29 17 non_icon</coords>
+0 0 0 0 1</fillrect>
+
+
+//------- Compos # 131 -------------------------------
+<fillrect><id>131 4 "sans_nom5941" 0
+</id>
+<coords>0 0 13 17 non_icon</coords>
+6 91 113 178 1</fillrect>
+
+
+//------- Compos # 132 -------------------------------
+<fillrect><id>132 4 "sans_nom840" 0
+</id>
+<coords>0 0 29 17 non_icon</coords>
+4 210 219 230 1</fillrect>
+
+
+//------- Compos # 133 -------------------------------
+<fillrect><id>133 4 "sans_nom842" 0
+</id>
+<coords>0 0 29 17 non_icon</coords>
+5 210 219 230 1</fillrect>
+
+
+//------- Compos # 134 -------------------------------
+<fillrect><id>134 4 "sans_nom843" 0
+</id>
+<coords>0 0 29 17 non_icon</coords>
+4 210 219 230 1</fillrect>
+
+
+//------- Compos # 135 -------------------------------
+<fillrect><id>135 4 "sans_nom848" 0
+</id>
+<coords>0 0 29 17 non_icon</coords>
+4 210 219 230 1</fillrect>
+
+
+//------- Compos # 136 -------------------------------
+<fillrect><id>136 4 "sans_nom850" 0
+</id>
+<coords>0 0 29 17 non_icon</coords>
+5 210 219 230 1</fillrect>
+
+
+//------- Compos # 137 -------------------------------
+<fillrect><id>137 4 "sans_nom851" 0
+</id>
+<coords>0 0 29 17 non_icon</coords>
+4 210 219 230 1</fillrect>
+
+
+//------- Compos # 138 -------------------------------
+<Ph_Sprite>
+<id>138 11 "gr_bt_on_off" 1
+</id>
+<attrs>101 4 10 1  2 </attrs>
+<tabobj><table>
+0 <Ph_Piece><id>-1 15 "sans_nom_529" 0
+<AttrsEditor>
+"align(null,null,null,null,null,null,null,null,null,1000,null,1000,null);"
+<Params> 0 </Params>
+</AttrsEditor>
+</id>
+<attrs>1 1 2 9 0 -1 0 0 0 0 0 _flag2 32767 X X "align(null,null,null,null,null,null,null,null,null,1000,null,1000,null);"X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 139</PhKey>
+1 <PhKey>1 140</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+1 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+1 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+0 <actScript>20 0 <ActionInfos> 804000 </ActionInfos>   1
+"// On<br>//=================<br>onOpenControl={:<br>     p = pieceExists(&lt;sprite&gt;.input);<br>     if(p==null) {<br>	panelGotoState(1,&lt;thisControlGroup&gt;);<br>     }<br>    printErrors();<br>};<br>onMouseClic={:<br><br>                                      // Montre la photo<br>      panelGotoState(1,&lt;thisControlGroup&gt;);<br>                                      // Action d&eacute;clech&eacute;e par le bouton<br>     p = pieceExists(&lt;sprite&gt;.input);<br>     if(p!=null) {<br>	pieceSetName(p,&quot;textarea&quot;);<br>     }<br>     // println(&quot;Action to &apos;off&apos;&quot;); <br>      printErrors();<br>};"
+</actScript>
+
+1 <actScript>20 0 <ActionInfos> 804000 </ActionInfos>   1
+"// Off<br>//=================<br>onMouseClic={:<br><br>                                      // Montre la photo<br>      panelGotoState(0,&lt;thisControlGroup&gt;);<br>                                      // Action d&eacute;clech&eacute;e par le bouton<br>     p = pieceExists(&lt;sprite&gt;.textarea);<br>     if(p!=null) {<br>	pieceSetName(p,&quot;input&quot;);<br>     }<br>    // println(&quot;Action to &apos;on&apos;&quot;); <br>      printErrors();<br>};"
+</actScript>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+1 <Ph_Piece><id>-1 15 "adjust" 0
+<AttrsEditor>
+"adjust();"
+<Params> 0 </Params>
+</AttrsEditor>
+</id>
+<attrs>1 1 2 5 0 -1 0 0 0 0 0 _flag2 13349 X X "adjust();"X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 130</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 1</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+0 <PhKey>1 100</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+2 <Ph_Piece><id>-1 15 "logo_change_state" 0
+<AttrsEditor>
+"libelle_for_import(&quot;Changer d&apos;&eacute;tat (ex : case-&agrave;-cocher)&quot;);"
+<Params> 0 </Params>
+</AttrsEditor>
+</id>
+<attrs>1 1 2 9 0 -1 0 0 0 0 1026 _flag2 32767 "" "" "libelle_for_import(\"Changer d'état (ex : case-à-cocher)\");"X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 143</PhKey>
+1 <PhKey>1 143</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 7</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 -8</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 2</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+0 <actScript>20 0 <ActionInfos> 804000 </ActionInfos>   1
+"onMouseClic={: <br>    groupIncNumFrame(&lt;groupSelected&gt;);<br>};"
+</actScript>
+
+1 <actScript>20 0 <ActionInfos> 804000 </ActionInfos>   1
+"onMouseClic={: <br>    groupIncNumFrame(&lt;groupSelected&gt;);<br>};"
+</actScript>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+1 <PhKey>1 1800</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+3 <Ph_Piece><id>-1 15 "sans_nom_0" 0
+<AttrsEditor>
+"align(null,null,null,null,null,null,null,null,null,1000,null,1000,null);"
+<Params> 0 </Params>
+</AttrsEditor>
+</id>
+<attrs>1 1 2 9 0 -1 0 0 0 0 16384 _flag2 32767 X X "align(null,null,null,null,null,null,null,null,null,1000,null,1000,null);"X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 153</PhKey>
+1 <PhKey>1 154</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+1 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 32</PhKey>
+1 <PhKey>1 32</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 3</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+0 <actScript>20 0 <ActionInfos> 804000 </ActionInfos>   1
+"// On<br>//=================<br>onMouseClic={:<br><br>                                      // Montre la photo<br>      panelGotoState(1,&lt;thisControlGroup&gt;);<br>                                      // Action d&eacute;clech&eacute;e par le bouton<br>     p = pieceExists(&lt;sprite&gt;.input);<br>     if(p!=null) {<br>	pieceSetName(p,&quot;textarea&quot;);<br>     }<br>     // println(&quot;Action to &apos;off&apos;&quot;); <br>      printErrors();<br>};"
+</actScript>
+
+1 <actScript>20 0 <ActionInfos> 804000 </ActionInfos>   1
+"// Off<br>//=================<br>onMouseClic={:<br><br>                                      // Montre la photo<br>      panelGotoState(0,&lt;thisControlGroup&gt;);<br>                                      // Action d&eacute;clech&eacute;e par le bouton<br>     p = pieceExists(&lt;sprite&gt;.textarea);<br>     if(p!=null) {<br>	pieceSetName(p,&quot;input&quot;);<br>     }<br>     //println(&quot;Action to &apos;on&apos;&quot;); <br>      printErrors();<br>};"
+</actScript>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+</table>
+<couchtab><attrs>10 6</attrs>
+<table>
+0 <couche> 0 2 0</couche>
+1 <couche> 0 3 1</couche>
+2 <couche> 0 1 2</couche>
+3 <couche> 0 0 3</couche>
+4 <null></null>
+
+5 <null></null>
+</table>
+</couchtab>
+</tabobj>
+</Ph_Sprite>
+
+
+//------- Compos # 139 -------------------------------
+<SpriteButton>
+<id>139 12 "sans_nom" 1
+</id>
+<attrs>100 3 10 1  2048 pages_ pages_  0 1 2 1 0 29 17 0</attrs>
+<tabobj><table>
+0 <Ph_Piece><id>-1 15 "btrelief" 0
+</id>
+<attrs>1 0 4 6 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 132</PhKey>
+2 <PhKey>1 133</PhKey>
+3 <PhKey>1 134</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+1 <Ph_Piece><id>-1 15 "btimage" 0
+</id>
+<attrs>1 0 4 10 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 14</PhKey>
+1 <PhKey>1 14</PhKey>
+2 <PhKey>1 14</PhKey>
+3 <PhKey>1 14</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 9</PhKey>
+1 <PhKey>1 9</PhKey>
+2 <PhKey>1 9</PhKey>
+3 <PhKey>1 9</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 1</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+2 <Ph_Piece><id>-1 15 "bttxt" 0
+</id>
+<attrs>1 0 4 10 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 142</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 9</PhKey>
+1 <PhKey>1 9</PhKey>
+2 <PhKey>1 9</PhKey>
+3 <PhKey>1 9</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 2</PhKey>
+1 <PhKey>1 2</PhKey>
+2 <PhKey>1 2</PhKey>
+3 <PhKey>1 2</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 2</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+</table>
+<couchtab><attrs>10 3</attrs>
+<table>
+0 <couche> 0 2 0</couche>
+1 <couche> 0 1 1</couche>
+2 <couche> 0 0 2</couche>
+</table>
+</couchtab>
+</tabobj>
+<pages>0 0 1 0 </pages> </SpriteButton>
+
+
+//------- Compos # 140 -------------------------------
+<SpriteButton>
+<id>140 12 "sans_nom" 1
+</id>
+<attrs>100 3 13 1  2048 pages_ pages_  0 1 2 1 0 29 17 0</attrs>
+<tabobj><table>
+0 <Ph_Piece><id>-1 15 "btrelief" 0
+</id>
+<attrs>1 0 4 6 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 135</PhKey>
+2 <PhKey>1 136</PhKey>
+3 <PhKey>1 137</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+1 <Ph_Piece><id>-1 15 "btimage" 0
+</id>
+<attrs>1 0 4 10 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 14</PhKey>
+1 <PhKey>1 14</PhKey>
+2 <PhKey>1 14</PhKey>
+3 <PhKey>1 14</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 9</PhKey>
+1 <PhKey>1 9</PhKey>
+2 <PhKey>1 9</PhKey>
+3 <PhKey>1 9</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 1</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+2 <Ph_Piece><id>-1 15 "sans_nom" 0
+</id>
+<attrs>1 0 4 10 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 141</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 9</PhKey>
+1 <PhKey>1 9</PhKey>
+2 <PhKey>1 9</PhKey>
+3 <PhKey>1 9</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 2</PhKey>
+1 <PhKey>1 2</PhKey>
+2 <PhKey>1 2</PhKey>
+3 <PhKey>1 2</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 2</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+</table>
+<couchtab><attrs>10 3</attrs>
+<table>
+0 <couche> 0 2 0</couche>
+1 <couche> 0 1 1</couche>
+2 <couche> 0 0 2</couche>
+</table>
+</couchtab>
+</tabobj>
+<pages>0 0 1 0 </pages> </SpriteButton>
+
+
+//------- Compos # 141 -------------------------------
+<txtaff><id>141 2 "sans_nom" 0
+</id>
+<coords>0 0 10 14 non_icon</coords>
+<txtstyle>"sans_nom528" "Arial" 8 1 3 0 91 113 178 "Arial"</txtstyle>
+<txttab><attrs>1 1</attrs>
+""
+</txttab>
+Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
+
+
+//------- Compos # 142 -------------------------------
+<txtaff><id>142 2 "sans_nom" 0
+</id>
+<coords>0 0 10 14 non_icon</coords>
+<txtstyle>"sans_nom528" "Arial" 8 1 3 0 91 113 178 "Arial"</txtstyle>
+<txttab><attrs>1 1</attrs>
+"X"
+</txttab>
+Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
+
+
+//------- Compos # 143 -------------------------------
+<Ph_Sprite>
+<id>143 11 "bt_next" 1
+</id>
+<attrs>100 4 10 1  1024 <SpriteFile> "$prog$doc/biblio/edit_controls/" "bt_next.phi" </SpriteFile> </attrs>
+<tabobj><table>
+0 <Ph_Piece><id>-1 15 "sans_nom36347" 0
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 144</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 -4</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 -6</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+1 <Ph_Piece><id>-1 15 "sans_nom640" 0
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 145</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 -6</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 1</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 1</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+2 <Ph_Piece><id>-1 15 "sans_nom3823" 0
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 146</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 -4</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 1</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 2</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+3 <Ph_Piece><id>-1 15 "sans_nom5941" 0
+</id>
+<attrs>1 1 1 4 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 131</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 -6</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 -6</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 3</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+</table>
+<couchtab><attrs>23 4</attrs>
+<table>
+0 <couche> 0 3 0</couche>
+1 <couche> 0 1 1</couche>
+2 <couche> 0 2 2</couche>
+3 <couche> 0 0 3</couche>
+</table>
+</couchtab>
+</tabobj>
+</Ph_Sprite>
+
+
+//------- Compos # 144 -------------------------------
+<shape><id>144 27 "sans_nom" 0
+</id>
+<coords>0 0 11 12 non_icon</coords>
+0 0 0 <PiecePath>
+<attrs>100 100 <PhColor>61 61 102 255 </PhColor> <PhColorGradient>0 mult 100 600 0 900 1100 1 <PhColorTab><attrs>10 2</attrs>
+<PhColor>
+93 93 202 255
+</PhColor>
+<PhColor>
+166 166 234 255
+</PhColor>
+</PhColorTab> -1</PhColorGradient> </attrs>
+noname <attrs>4 4</attrs>
+<SegmentLine> <PieceSegment_Pack>0</PieceSegment_Pack> line <coords>2 0  val_multiply_by 100    0 0 1100 0  </coords>  </SegmentLine>
+<SegmentLine> <PieceSegment_Pack>1</PieceSegment_Pack> line <coords>2 0  val_multiply_by 100    1100 0 1100 1200  </coords>  </SegmentLine>
+<SegmentLine> <PieceSegment_Pack>2</PieceSegment_Pack> line <coords>2 0  val_multiply_by 100    1100 1200 0 1200  </coords>  </SegmentLine>
+<SegmentLine> <PieceSegment_Pack>3</PieceSegment_Pack> line <coords>2 0  val_multiply_by 100    0 1200 0 0  </coords>  </SegmentLine>
+<PiecePath_Tab>
+<attrs>10 0</attrs>
+</PiecePath_Tab>
+</PiecePath>
+</shape>
+
+
+//------- Compos # 145 -------------------------------
+<ligne><id>145 17 "sans_nom641" 0
+</id>
+<coords>0 0 17 0 non_icon</coords>
+17 0 0 0 0 38 1 -2147483648</ligne>
+
+
+//------- Compos # 146 -------------------------------
+<ligne><id>146 17 "sans_nom" 0
+</id>
+<coords>0 0 17 0 non_icon</coords>
+17 0 255 255 255 34 1 -2147483648</ligne>
+
+
+//------- Compos # 147 -------------------------------
+<fillrect><id>147 4 "sans_nom" 0
+</id>
+<coords>0 0 29 17 non_icon</coords>
+4 210 219 230 1</fillrect>
+
+
+//------- Compos # 148 -------------------------------
+<fillrect><id>148 4 "sans_nom" 0
+</id>
+<coords>0 0 29 17 non_icon</coords>
+5 210 219 230 1</fillrect>
+
+
+//------- Compos # 149 -------------------------------
+<fillrect><id>149 4 "sans_nom" 0
+</id>
+<coords>0 0 29 17 non_icon</coords>
+4 210 219 230 1</fillrect>
+
+
+//------- Compos # 150 -------------------------------
+<fillrect><id>150 4 "sans_nom" 0
+</id>
+<coords>0 0 29 17 non_icon</coords>
+4 210 219 230 1</fillrect>
+
+
+//------- Compos # 151 -------------------------------
+<fillrect><id>151 4 "sans_nom" 0
+</id>
+<coords>0 0 29 17 non_icon</coords>
+5 210 219 230 1</fillrect>
+
+
+//------- Compos # 152 -------------------------------
+<fillrect><id>152 4 "sans_nom" 0
+</id>
+<coords>0 0 29 17 non_icon</coords>
+4 210 219 230 1</fillrect>
+
+
+//------- Compos # 153 -------------------------------
+<SpriteButton>
+<id>153 12 "sans_nom" 1
+</id>
+<attrs>100 3 10 1  2048 pages_ pages_  0 1 2 1 0 29 17 0</attrs>
+<tabobj><table>
+0 <Ph_Piece><id>-1 15 "btrelief" 0
+</id>
+<attrs>1 0 4 6 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 147</PhKey>
+2 <PhKey>1 148</PhKey>
+3 <PhKey>1 149</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+1 <Ph_Piece><id>-1 15 "btimage" 0
+</id>
+<attrs>1 0 4 10 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 14</PhKey>
+1 <PhKey>1 14</PhKey>
+2 <PhKey>1 14</PhKey>
+3 <PhKey>1 14</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 9</PhKey>
+1 <PhKey>1 9</PhKey>
+2 <PhKey>1 9</PhKey>
+3 <PhKey>1 9</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 1</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+2 <Ph_Piece><id>-1 15 "bttxt" 0
+</id>
+<attrs>1 0 4 10 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 156</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 9</PhKey>
+1 <PhKey>1 9</PhKey>
+2 <PhKey>1 9</PhKey>
+3 <PhKey>1 9</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 2</PhKey>
+1 <PhKey>1 2</PhKey>
+2 <PhKey>1 2</PhKey>
+3 <PhKey>1 2</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 2</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+</table>
+<couchtab><attrs>10 3</attrs>
+<table>
+0 <couche> 0 2 0</couche>
+1 <couche> 0 1 1</couche>
+2 <couche> 0 0 2</couche>
+</table>
+</couchtab>
+</tabobj>
+<pages>0 0 1 0 </pages> </SpriteButton>
+
+
+//------- Compos # 154 -------------------------------
+<SpriteButton>
+<id>154 12 "sans_nom" 1
+</id>
+<attrs>100 3 13 1  2048 pages_ pages_  0 1 2 1 0 29 17 0</attrs>
+<tabobj><table>
+0 <Ph_Piece><id>-1 15 "btrelief" 0
+</id>
+<attrs>1 0 4 6 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 150</PhKey>
+2 <PhKey>1 151</PhKey>
+3 <PhKey>1 152</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+1 <Ph_Piece><id>-1 15 "btimage" 0
+</id>
+<attrs>1 0 4 10 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 0</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 14</PhKey>
+1 <PhKey>1 14</PhKey>
+2 <PhKey>1 14</PhKey>
+3 <PhKey>1 14</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 9</PhKey>
+1 <PhKey>1 9</PhKey>
+2 <PhKey>1 9</PhKey>
+3 <PhKey>1 9</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 1</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+
+2 <Ph_Piece><id>-1 15 "sans_nom" 0
+</id>
+<attrs>1 0 4 10 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
+<table>
+<piste><attrs> 0 0</attrs>
+<table>
+0 <PhKey>1 155</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 1</attrs>
+<table>
+0 <PhKey>1 9</PhKey>
+1 <PhKey>1 9</PhKey>
+2 <PhKey>1 9</PhKey>
+3 <PhKey>1 9</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 2</attrs>
+<table>
+0 <PhKey>1 2</PhKey>
+1 <PhKey>1 2</PhKey>
+2 <PhKey>1 2</PhKey>
+3 <PhKey>1 2</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 3</attrs>
+<table>
+0 <PhKey>1 2</PhKey>
+</table>
+</piste>
+<piste><attrs> 0 4</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 5</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 6</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 7</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 8</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 9</attrs>
+<table>
+</table>
+</piste>
+<piste><attrs> 0 10</attrs>
+<table>
+</table>
+</piste>
+</table>
+</Ph_Piece>
+</table>
+<couchtab><attrs>10 3</attrs>
+<table>
+0 <couche> 0 2 0</couche>
+1 <couche> 0 1 1</couche>
+2 <couche> 0 0 2</couche>
+</table>
+</couchtab>
+</tabobj>
+<pages>0 0 1 0 </pages> </SpriteButton>
+
+
+//------- Compos # 155 -------------------------------
+<txtaff><id>155 2 "sans_nom" 0
+</id>
+<coords>0 0 10 14 non_icon</coords>
+<txtstyle>"sans_nom528" "Arial" 8 1 3 0 91 113 178 "Arial"</txtstyle>
+<txttab><attrs>1 1</attrs>
+"X"
+</txttab>
+Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
+
+
+//------- Compos # 156 -------------------------------
+<txtaff><id>156 2 "sans_nom" 0
+</id>
+<coords>0 0 10 14 non_icon</coords>
+<txtstyle>"sans_nom528" "Arial" 8 1 3 0 91 113 178 "Arial"</txtstyle>
+<txttab><attrs>1 1</attrs>
+""
+</txttab>
+Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
+
+
+//------- Compos # 157 -------------------------------
+<txtaff><id>157 2 "sans_nom" 0
+</id>
+<coords>0 0 75 15 non_icon</coords>
+<txtstyle>"sans_nom2090" "SansSerif" 8 0 0 0 121 121 159 "SansSerif"</txtstyle>
+<txttab><attrs>1 1</attrs>
+"Plusieurs lignes"
+</txttab>
+Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
 </table>
 </composants><PhListGroupAccess><txttab><attrs>3 3</attrs>
 "*** ajouter ***"
