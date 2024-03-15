@@ -1,3 +1,0 @@
-class qcm_pages{
-	
-}

@@ -1,6 +1,7 @@
 function EmbedMaster(){}
 EmbedMaster.test=function(){testA(); alert("Hello OK");}
 EmbedMaster.exec=async function(messageP, fonctionP){
+<<<<<<< HEAD
 	let txt = messageP.trim();
 	if(txt.charAt(0)=='['){
 		try{
@@ -10,6 +11,8 @@ EmbedMaster.exec=async function(messageP, fonctionP){
 	if(txt.charAt(0)=='&'){
 		messageP = parseInt(messageP.substring(1));
 	}
+=======
+>>>>>>> dc1731d19647b380a6b1f43ea1a8004120d97022
 	try{													// Gestion des erreurs classique
 		let result = await window.wvEmbedRequest.postWait(messageP, fonctionP, 1000000);
 		alert("A fin "+result.answer);						// La réponse est placée dans le "retour"
@@ -31,7 +34,11 @@ EmbedMaster.exec=async function(messageP, fonctionP){
 async function testA(){										// Fonction asynchrone
 	try{													// Gestion des erreurs classique
 		let embed_ = window.wvEmbedRequest;			// Appel dans une variable : pour lisibilité
+<<<<<<< HEAD
 		//alert('Je fais de trucs avant');					// Exemple d'action précédant le 1er appel
+=======
+		//alert('Je fais de triucs avant');					// Exemple d'action précédant le 1er appel
+>>>>>>> dc1731d19647b380a6b1f43ea1a8004120d97022
 															//________________________________________
 															// 1ère requète
 															// La fonstion appelée dans l'embed pause 2 secondes
@@ -46,7 +53,11 @@ async function testA(){										// Fonction asynchrone
 		result = await embed_.postWait("Il fait beau2", "onEmbed2", 1000000,);
 		alert("A fin2 "+result.answer);						// Traitement de la réponse
 	}catch(e){
+<<<<<<< HEAD
 		alert("FIN "+e); 									// Traitement des erreurs.
+=======
+		alert("FIN "+e);									// Traitement des erreurs.
+>>>>>>> dc1731d19647b380a6b1f43ea1a8004120d97022
 	}														// - e : est un tableau 
 };															//   - e.result.answer
 															//   - e.result.question
