@@ -7,6 +7,9 @@ EmbedMaster.exec=async function(messageP, fonctionP){
 			messageP = JSON.parse(messageP);
 		}catch(e){alert("JSON ERROR"); return;}
 	}
+	if(txt.charAt(0)=='&'){
+		messageP = parseInt(messageP.substring(1));
+	}
 	try{													// Gestion des erreurs classique
 		let result = await window.wvEmbedRequest.postWait(messageP, fonctionP, 1000000);
 		alert("A fin "+result.answer);						// La réponse est placée dans le "retour"

@@ -1,220 +1,4 @@
 /*ea_import:WvEmbed*/
-//_________________________
-WvEmbedEvent.ERROR_TYPE_DISPLAY		= 0;
-WvEmbedEvent.ERROR_TABVAL_NOT_TAB	= 1;
-WvEmbedEvent.ERROR_TABVAL_NOT_3		= 2;
-WvEmbedEvent.ERROR_TABVAL0_NOT_TAB	= 3;
-WvEmbedEvent.ERROR_TABVAL1_NOT_START= 4;
-WvEmbedEvent.ERROR_VAL_CASE			= 5;
-WvEmbedEvent.ERROR_VAL_CASE_MAX		= 6;
-WvEmbedEvent.ERROR_CASE_MAX			= 7;
-WvEmbedEvent.ERROR_SCRIPT_ERROR		= 8;
-
-WvEmbedEvent.MESSAGES=[
-	"displayType(message) * Type d'affichage des valeurs erroné. message=/%1/\n   attendu 0=décimal,1=héxa et 2=interrupteurs",
-	"tabVal2Ram(message) * message doit être un tableau : %1\n format : [[val0,val1,val2...], début, fin]",
-	"tabVal2Ram(message) * le tableau-message daoit compoter 2 cases : %1\n format : [[val0,val1,val2...], début]",
-	"tabVal2Ram(message) * la case #0 de message doit être un tableau : %1\n format : [[val0,val1,val2...], début]",
-	"tabVal2Ram(message) * la case #1 indique le début de la zone à poser : %1\n format : [[val0,val1,val2...], début]",
-	"%1(message) * message doit être un tableau à 2 case : %2\n format : [valeur, numCase]",
-	"%1(message) * 'val' et 'octetNum' sont des entiers compris dans [0,%4]: val=%2, octetNum=%3\n format : [valeur, numCase]",
-	"%1(message) * 'numOctet' doit être un nombre compris dans [0,%3] : %2\n format : numCase",
-	"%1(message) * 'script' inscrit dans la zone de sasie script, devrait etre un texte :\n /%2/",
-];
-/**
- * Rafraichit les méémoires. 
- * Aucun parammètre
- */
-WvEmbedEvent.refreshDisplay=function(messageP, returnP){AsmEditor.refreshDisplay();return true;};
-WvEmbedEvent.DISPLAY_TYPE = {n:0,d:0,e:0,h:1,i:2,b:2};
-/**
- * Modife le type d'affichage : 
- * Paramètre / String : 
- * - message/type : 0=décimal,1=héxa et 2=interrupteurs
- */
-WvEmbedEvent.displayType=function(messageP, returnP){
-	if(messageP===null || messageP===undefined) {
-		WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TYPE_DISPLAY], "<inconnu>");		
-	}
-	let n = parseInt(messageP);
-	if(!isNaN(n)){
-		if (n<0 || n>2){n=-1;}
-	}else{
-		n=-1;
-		if(messageP.length && messageP.length>0){ 
-			n = WvEmbedEvent.DISPLAY_TYPE[messageP.substring(0,1).toLowerCase()];
-			if(n==null || n==undefined) n=-1;
-		}
-	}
-	if(n<0){
-		WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TYPE_DISPLAY], messageP);
-	}
-	AsmEditor.displayType(n);
-	return true;
-};
-/**
- * Avance l'exécution du programme d'une instruction
- * Aucun paramètre
- */
-WvEmbedEvent.exe1step=function(messageP, returnP){AsmEditor.exe1step();return true;};
-/**
- * Exécute le programme pas-à-pas
- * Aucun paramètre
- */
-WvEmbedEvent.exeStepByStepStop=function(messageP, returnP){AsmEditor.exeStepByStepStop();return true;};
-/**
- * Exécute le programme jusqu'au point d'arrêt
- * Aucun paramètre
- */
-WvEmbedEvent.exe=function(messageP, returnP){AsmEditor.exe();return true;};
-/**
- * Remplit une zone de la RAM
- * Paramètres :
- * - messageP / tableau = [[mems], start]
- *				ou "v0,v1,v2...;start"
- *		- mems : suite de nombres à placer dans la mémoire
- * 		- position de départ de la pause 
- */
-WvEmbedEvent.tabVal2Ram=function(messageP, returnP, numType){
-	let tab;
-	let start;
-	if(!Array.isArray(messageP)){
-		if(typeof messageP !== 'string'){
-			WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TABVAL_NOT_TAB], messageP);		
-		}
-		let t = messageP.split(';');
-		if(t.length!=2){
-			WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TABVAL_NOT_3], messageP);				
-		}
-		tab	  = t[0].split(',');
-		start = t[1];
-	}else{
-		if(messageP.length!=2){
-			WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TABVAL_NOT_3], messageP);				
-		}
-		tab = messageP[0];
-		start = parseInt(messageP[1]);	
-	}
-	if(!Array.isArray(tab) || tab.length==0){
-		WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TABVAL0_NOT_TAB], tab); 				
-	}
-	if(isNaN(start) || start<0 || start>255){
-		WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TABVAL1_NOT_START], start);							
-	}
-	AsmDatas.tabVal2Ram( tab , start);
-	return true;
-}
-/**
- * Ecrit une valeur dans une mémoire de la RAM.
- * paramètre / tableau : [valeur 0 à 255, numOctet 0 à 255]
- */
-WvEmbedEvent.ramSet=function(messageP, returnP){
-	let octetNum;
-	let val=null;
-	if(!Array.isArray(messageP) || messageP.length!=2){
-		if(typeof messageP === 'string'){
-			let t	= messageP.split(',');
-			if(t.length!=2){
-				WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_VAL_CASE], "ramSet", messageP); 		
-			}
-			val = t[0];
-			octetNum = t[1];
-		}
-		if(val===null){
-			WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_VAL_CASE], "ramSet", messageP); 		
-		}
-	}else{
-		val = parseInt(messageP[0]);	
-		octetNum = parseInt(messageP[1]);
-	}		
-	if(isNaN(val) || val<0 || val>255 || isNaN(octetNum) || octetNum<0 || octetNum>7){
-		WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_VAL_CASE_MAX], "ramSet", val, octetNum,255);
-	}
-	AsmDatas.ramPutValue( val , octetNum);
-	return true;
-}
-/**
- * Ecrit une valeur dans un registre.
- * pramètre / tableau : [valeur, numRegistre 0à7]
- */
-WvEmbedEvent.regSet=function(messageP, returnP){
-	let octetNum;
-	let val=null;
-	if(!Array.isArray(messageP) || messageP.length!=2){
-		if(typeof messageP === 'string'){
-			let t	= messageP.split(',');
-			if(t.length!=2){
-				WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_VAL_CASE], "regSet", messageP); 		
-			}
-			val = t[0];
-			octetNum = t[1];
-		}
-		if(val===null){
-			WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_VAL_CASE], "regSet", messageP); 		
-		}
-	}else{
-		val = parseInt(messageP[0]);	
-		octetNum = parseInt(messageP[1]);
-	}		
-	if(isNaN(val) || val<0 || val>255 || isNaN(octetNum) || octetNum<0 || octetNum>7){
-		WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_VAL_CASE_MAX], "regSet", val, octetNum,255);
-	}
-	AsmDatas.regPutValue( val , octetNum);
-	return true;
-}
-/**
- * Lit la valeur d'une mémoire de la RAM
- * Paramètre / String
- * - int octetNum : numéro d'octet à lire
- */
-WvEmbedEvent.ramGetValue=function(messageP, returnP){
-	let octetNum = parseInt(messageP);	
-	if(isNaN(octetNum) || octetNum<0 || octetNum>255){
-		WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_CASE_MAX], "ramGetValue", octetNum,255);
-	}
-	return AsmDatas.ramGetValue(octetNum);
-}
-/**
- * Lit la valeur d(un registre
- * Paramètre / String
- * - int regNum : numéro d'octet à lire
- */
-WvEmbedEvent.regGetValue=function(messageP, returnP){
-	let octetNum = parseInt(messageP);	
-	if(isNaN(octetNum) || octetNum<0 || octetNum>7){
-		WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_CASE_MAX], "regGetValue", octetNum,7);
-	}
-	return AsmDatas.regGetValue(octetNum);
-}
-/**
- * Lit le programme inscrit dans la zone script 
- * Aucun paramètre
- */
-WvEmbedEvent.scriptRead=function(){
-	return AsmEditor.scriptRead();
-}
-/**
- * Ecrit un programme dans la zone script 
- * Paramètre / string
- * - Texte à écrire dans la zone script
- */
-WvEmbedEvent.scriptWrite=function(scriptP, returnP){
-	if(typeof scriptP !== 'string'){
-		WvEmbedEvent.error(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_SCRIPT_ERROR], "scriptWrite", scriptP);		
-	}
-	return AsmEditor.scriptWrite(scriptP);
-}
-/**
- * Compile le programme inscrit dans la zone script 
- * Paramètre / string
- * - Texte à écrire dans la zone script
- */
-WvEmbedEvent.scriptCompiler=function(messageP, returnP){
-	if(typeof scriptP === 'string'){
-		return AsmEditor.scriptCompiler( scriptP );
-	}
-	return AsmEditor.scriptCompiler();
-}
 //-------------------------------
 
 /********************************************************************************************************************* 
@@ -2183,3 +1967,181 @@ AsmEditor.scriptCompiler_=function(paramsP){
 
 
 
+//_________________________
+WvEmbedEvent.ERROR_TYPE_DISPLAY		= 0;
+WvEmbedEvent.ERROR_TABVAL_NOT_TAB	= 1;
+WvEmbedEvent.ERROR_TABVAL_NOT_3		= 2;
+WvEmbedEvent.ERROR_TABVAL0_NOT_TAB	= 3;
+WvEmbedEvent.ERROR_TABVAL1_NOT_START= 4;
+WvEmbedEvent.ERROR_VAL_CASE			= 5;
+WvEmbedEvent.ERROR_VAL_CASE_MAX		= 6;
+WvEmbedEvent.ERROR_CASE_MAX			= 7;
+WvEmbedEvent.ERROR_SCRIPT_ERROR		= 8;
+
+WvEmbedEvent.MESSAGES=[
+	"displayType(message) * Type d'affichage des valeurs erroné. message=/%1/\n   attendu 0=décimal,1=héxa et 2=interrupteurs",
+	"tabVal2Ram(message) * message doit être un tableau : %1\n format : [[val0,val1,val2...], début, fin]",
+	"tabVal2Ram(message) * le tableau-message daoit compoter 2 cases : %1\n format : [[val0,val1,val2...], début]",
+	"tabVal2Ram(message) * la case #0 de message doit être un tableau : %1\n format : [[val0,val1,val2...], début]",
+	"tabVal2Ram(message) * la case #1 indique le début de la zone à poser : %1\n format : [[val0,val1,val2...], début]",
+	"%1(message) * message doit être un tableau à 2 case : %2\n format : [valeur, numCase]",
+	"%1(message) * 'val' et 'octetNum' sont des entiers compris dans [0,%4]: val=%2, octetNum=%3\n format : [valeur, numCase]",
+	"%1(message) * 'numOctet' doit être un nombre compris dans [0,%3] : %2\n format : numCase",
+	"%1(message) * 'script' inscrit dans la zone de saisie script, devrait etre un texte :\n /%2/",
+];
+/**
+ * Rafraichit les méémoires. 
+ * Aucun parammètre
+ */
+WvEmbedEvent.refreshDisplay=function(messageP, returnP){AsmEditor.refreshDisplay();return true;};
+WvEmbedEvent.DISPLAY_TYPE = {n:0,d:0,e:0,h:1,i:2,b:2};
+/**
+ * Modife le type d'affichage : 
+ * Paramètre / String : 
+ * - message/type : 0=décimal,1=héxa et 2=interrupteurs
+ */
+WvEmbedEvent.displayType=function(messageP, returnP){
+	if(messageP===null || messageP===undefined) {
+		WvEmbedEvent.wEmbedError(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TYPE_DISPLAY], "<inconnu>");		
+	}
+	let n = parseInt(messageP);
+	if(!isNaN(n)){
+		if (n<0 || n>2){n=-1;}
+	}else{
+		n=-1;
+		if(messageP.length && messageP.length>0){ 
+			n = WvEmbedEvent.DISPLAY_TYPE[messageP.substring(0,1).toLowerCase()];
+			if(n==null || n==undefined) n=-1;
+		}
+	}
+	if(n<0){
+		WvEmbedEvent.wEmbedError(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TYPE_DISPLAY], messageP);
+	}
+	AsmEditor.displayType(n);
+	return true;
+};
+/**
+ * Avance l'exécution du programme d'une instruction
+ * Aucun paramètre
+ */
+WvEmbedEvent.exe1step=function(messageP, returnP){AsmEditor.exe1step();return true;};
+/**
+ * Exécute le programme pas-à-pas
+ * Aucun paramètre
+ */
+WvEmbedEvent.exeStepByStepStop=function(messageP, returnP){AsmEditor.exeStepByStepStop();return true;};
+/**
+ * Exécute le programme jusqu'au point d'arrêt
+ * Aucun paramètre
+ */
+WvEmbedEvent.exe=function(messageP, returnP){AsmEditor.exe();return true;};
+/**
+ * Remplit une zone de la RAM
+ * Paramètres :
+ * - messageP / tableau = [[mems], start]
+ *				ou "v0,v1,v2...;start"
+ *		- mems : suite de nombres à placer dans la mémoire
+ * 		- position de départ de la pause 
+ */
+WvEmbedEvent.ramAreaSet=function(messageP, returnP, numType){
+	messageP=WvEmbedEvent.paramTab(messageP, "ramAreaSet", "valeurs, start", ';');
+	let tab = WvEmbedEvent.paramTabInt(messageP[0], "ramAreaSet", "valeurs", ',', 0, 255);
+	let start = WvEmbedEvent.paramInt(messageP[1], "ramAreaSet", "start", 0, 255);
+	AsmDatas.tabVal2Ram( tab , start);
+		/*
+	let tab;
+	let start;
+	if(!Array.isArray(messageP)){
+		if(typeof messageP !== 'string'){
+			WvEmbedEvent.wEmbedError(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TABVAL_NOT_TAB], messageP);		
+		}
+		messageP = messageP.split(';');
+	}
+	if(messageP.length!=2){
+		WvEmbedEvent.wEmbedError(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TABVAL_NOT_3], messageP);				
+	}
+	tab = messageP[0];
+	start = parseInt(messageP[1]);	
+	if(!Array.isArray(tab) || tab.length==0){
+		WvEmbedEvent.wEmbedError(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TABVAL0_NOT_TAB], tab); 				
+	}
+	if(isNaN(start) || start<0 || start>255){
+		WvEmbedEvent.wEmbedError(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TABVAL1_NOT_START], start);							
+	}
+	AsmDatas.tabVal2Ram( tab , start);
+	*/
+	
+	return true;
+}
+/**
+ * Ecrit une valeur dans une mémoire de la RAM.
+ * paramètre / tableau : [valeur 0 à 255, numOctet 0 à 255]
+ */
+WvEmbedEvent.ramSet=function(messageP, returnP){
+	let params = WvEmbedEvent.paramInt2(messageP, 0,255, 0,255,"ramSet", "valeur", "num-mémoire");
+	AsmDatas.ramPutValue( params[0] , params[1]);
+	return true;
+}
+/**
+ * Ecrit une valeur dans un registre.
+ * pramètre / tableau : [valeur, numRegistre 0à7]
+ */
+WvEmbedEvent.regSet=function(messageP, returnP){
+	let params = WvEmbedEvent.paramInt2(messageP, 0,255, 0,7,"regSet", "valeur", "num-mémoire");
+	AsmDatas.regPutValue( params[0] , params[1]);
+	return true;
+}
+/**
+ * Lit la valeur d'une mémoire de la RAM
+ * Paramètre / String
+ * - int octetNum : numéro d'octet à lire
+ */
+WvEmbedEvent.ramGet=function(messageP, returnP){
+	return AsmDatas.ramGetValue(WvEmbedEvent.paramInt( messageP,"ramGet()", "numero de mémoire", 0,255));
+}
+/**
+ * Lit la valeur d(un registre
+ * Paramètre / String
+ * - int regNum : numéro d'octet à lire
+ */
+WvEmbedEvent.regGet=function(messageP, returnP){
+	return AsmDatas.regGetValue(WvEmbedEvent.paramInt( messageP,"ramGet()", "numero de mémoire", 0,7));
+}
+/**
+ * Lit le programme inscrit dans la zone script 
+ * Aucun paramètre
+ */
+WvEmbedEvent.scriptGet=function(){
+	return AsmEditor.scriptRead();
+}
+/**
+ * Ecrit un programme dans la zone script 
+ * Paramètre / string
+ * - Texte à écrire dans la zone script
+ */
+WvEmbedEvent.scriptSet=function(scriptP){
+	
+	/*
+	if(typeof scriptP !== 'string'){
+		if(!Array.isArray(scriptP) && scriptP.length<1 && typeof scriptP[0] !== 'string'){
+				WvEmbedEvent.wEmbedError(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_SCRIPT_ERROR], "scriptWrite", scriptP);
+		}
+		scriptP=scriptP[0];
+	}
+	*/
+	return AsmEditor.scriptWrite(WvEmbedEvent.paramString( scriptP,"scriptSet()", "script"));
+}
+/**
+ * Compile le programme inscrit dans la zone script 
+ * Paramètre / string
+ * - Texte à écrire dans la zone script
+ */
+WvEmbedEvent.scriptCompiler=function(messageP, returnP){
+	return AsmEditor.scriptCompiler();
+}
+WvEmbedEvent.errorTest=function(messageP, returnP){
+	WvEmbedEvent.wEmbedError("%3%2%1",111,222,333); 		
+}
+WvEmbedEvent.exeStepByStep=function(messageP, returnP){
+	AsmEditor.exeStepByStep();	
+}

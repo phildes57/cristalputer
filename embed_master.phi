@@ -115,12 +115,12 @@ PhListGroupAccess="_EAnim.FensVolantes.FenWithSpecificComponent.PhListGroupAcces
 </piste>
 <piste><attrs> 0 1</attrs>
 <table>
-0 <PhKey>1 196</PhKey>
+0 <PhKey>1 11</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 2</attrs>
 <table>
-0 <PhKey>1 62</PhKey>
+0 <PhKey>1 20</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 3</attrs>
@@ -173,12 +173,12 @@ PhListGroupAccess="_EAnim.FensVolantes.FenWithSpecificComponent.PhListGroupAcces
 </piste>
 <piste><attrs> 0 1</attrs>
 <table>
-0 <PhKey>1 22</PhKey>
+0 <PhKey>1 190</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 2</attrs>
 <table>
-0 <PhKey>1 37</PhKey>
+0 <PhKey>1 22</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 3</attrs>
@@ -228,12 +228,12 @@ PhListGroupAccess="_EAnim.FensVolantes.FenWithSpecificComponent.PhListGroupAcces
 </piste>
 <piste><attrs> 0 1</attrs>
 <table>
-0 <PhKey>1 23</PhKey>
+0 <PhKey>1 55</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 2</attrs>
 <table>
-0 <PhKey>1 62</PhKey>
+0 <PhKey>1 20</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 3</attrs>
@@ -283,12 +283,12 @@ PhListGroupAccess="_EAnim.FensVolantes.FenWithSpecificComponent.PhListGroupAcces
 </piste>
 <piste><attrs> 0 1</attrs>
 <table>
-0 <PhKey>1 28</PhKey>
+0 <PhKey>1 24</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 2</attrs>
 <table>
-0 <PhKey>1 96</PhKey>
+0 <PhKey>1 47</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 3</attrs>
@@ -339,7 +339,7 @@ PhListGroupAccess="_EAnim.FensVolantes.FenWithSpecificComponent.PhListGroupAcces
 </table>
 </couchtab>
 </tabobj>
-<face_common><css>"""""""""""                                                                          /*refresh*/WvBubblePlayer.refreshMax=1;/*refresh*/"""""
+<face_common><css>"""""""""""                                                                           /*refresh*/WvBubblePlayer.refreshMax=1;/*refresh*/"""""
 </css>
 </face_common> </Ph_Sprite>
 
@@ -411,8 +411,8 @@ _xMouse 1 508
 
 2 <Ph_Piece><id>-1 15 "sans_nom102" 0
 <options>
-_yMouse 1 6
-_xMouse 1 79
+_yMouse 1 11
+_xMouse 1 63
 </options>
 </id>
 <attrs>1 1 1 5 0 -1 0 0 0 0 22020096 X X X X 0 0 0 0 0 </attrs>
@@ -424,12 +424,12 @@ _xMouse 1 79
 </piste>
 <piste><attrs> 0 1</attrs>
 <table>
-0 <PhKey>1 170</PhKey>
+0 <PhKey>1 92</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 2</attrs>
 <table>
-0 <PhKey>1 -108</PhKey>
+0 <PhKey>1 -101</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 3</attrs>
@@ -1221,8 +1221,8 @@ Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
 <tabobj><table>
 0 <Ph_Piece><id>-1 15 "value" 0
 <options>
-_yMouse 1 109
-_xMouse 1 101
+_yMouse 1 9
+_xMouse 1 33
 </options>
 </id>
 <attrs>1 1 1 5 0 -1 0 0 0 0 0 _flag2 32767 "" "" X X 0 0 0 0 0 </attrs>
@@ -1283,8 +1283,8 @@ _xMouse 1 101
 
 1 <Ph_Piece><id>-1 15 "adjust" 0
 <options>
-_yMouse 1 4
-_xMouse 1 170
+_yMouse 1 10
+_xMouse 1 190
 </options>
 <AttrsEditor>
 "adjust();"
@@ -1459,8 +1459,8 @@ _xMouse 1 170
 
 4 <Ph_Piece><id>-1 15 "input" 0
 <options>
-_yMouse 1 4
-_xMouse 1 170
+_yMouse 1 10
+_xMouse 1 190
 </options>
 <AttrsEditor>
 "align(0,null,0,null,null,null,null,null,null,1000,null,1000,null);"
@@ -1542,8 +1542,8 @@ _xMouse 1 170
 //------- Compos # 37 -------------------------------
 <txtaff><id>37 2 "sans_nom" 0
 </id>
-<coords>0 0 135 135 non_icon</coords>
-<txtstyle>"nulledit" "Arial" 10 0 0 0 0 0 0 "Arial"</txtstyle>
+<coords>0 0 187 20 non_icon</coords>
+<txtstyle>"nulledit" "Arial" 14 1 0 0 0 0 0 "Arial"</txtstyle>
 <txttab><attrs>1 1</attrs>
 "Inscrivez votre texte ici,"
 </txttab>
@@ -3677,8 +3677,8 @@ Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
 <tabobj><table>
 0 <Ph_Piece><id>-1 15 "value" 0
 <options>
-_yMouse 1 11
-_xMouse 1 6
+_yMouse 1 8
+_xMouse 1 12
 </options>
 </id>
 <attrs>1 1 1 5 0 -1 0 0 0 0 0 _flag2 32767 "" "" X X 0 0 0 0 0 </attrs>
@@ -3739,8 +3739,8 @@ _xMouse 1 6
 
 1 <Ph_Piece><id>-1 15 "adjust" 0
 <options>
-_yMouse 1 9
-_xMouse 1 76
+_yMouse 1 6
+_xMouse 1 30
 </options>
 <AttrsEditor>
 "adjust();"
@@ -3915,8 +3915,8 @@ _xMouse 1 76
 
 4 <Ph_Piece><id>-1 15 "input" 0
 <options>
-_yMouse 1 9
-_xMouse 1 76
+_yMouse 1 6
+_xMouse 1 30
 </options>
 <AttrsEditor>
 "align(0,null,0,null,null,null,null,null,null,1000,null,1000,null);"
@@ -3998,8 +3998,8 @@ _xMouse 1 76
 //------- Compos # 78 -------------------------------
 <txtaff><id>78 2 "sans_nom" 0
 </id>
-<coords>0 0 22 22 non_icon</coords>
-<txtstyle>"nulledit" "Arial" 10 0 0 0 0 0 0 "Arial"</txtstyle>
+<coords>0 0 30 20 non_icon</coords>
+<txtstyle>"nulledit" "Arial" 14 1 0 0 0 0 0 "Arial"</txtstyle>
 <txttab><attrs>1 1</attrs>
 "text"
 </txttab>
@@ -5545,9 +5545,13 @@ Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
 <SpriteButton>
 <id>111 12 "bt_anim_60" 1
 </id>
-<attrs>100 4 10 1  33557506 pages_ pages_  0 1 2 1 0 51 19 -3</attrs>
+<attrs>100 4 10 1  33557506 pages_ pages_  0 1 2 1 0 39 19 -3</attrs>
 <tabobj><table>
 0 <Ph_Piece><id>-1 15 "adjust" 0
+<options>
+_yMouse 1 12
+_xMouse 1 41
+</options>
 </id>
 <attrs>1 0 4 4 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
 <table>
@@ -5613,10 +5617,10 @@ Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
 </piste>
 <piste><attrs> 0 1</attrs>
 <table>
-0 <PhKey>1 25</PhKey>
-1 <PhKey>1 25</PhKey>
-2 <PhKey>1 25</PhKey>
-3 <PhKey>1 25</PhKey>
+0 <PhKey>1 19</PhKey>
+1 <PhKey>1 19</PhKey>
+2 <PhKey>1 19</PhKey>
+3 <PhKey>1 19</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 2</attrs>
@@ -5665,8 +5669,8 @@ Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
 
 2 <Ph_Piece><id>-1 15 "bttxt" 0
 <options>
-_yMouse 1 2
-_xMouse 1 24
+_yMouse 1 10
+_xMouse 1 20
 </options>
 </id>
 <attrs>1 0 4 12 0 -1 0 0 0 0 0 X X X X 0 0 0 0 0 </attrs>
@@ -5680,10 +5684,10 @@ _xMouse 1 24
 </piste>
 <piste><attrs> 0 1</attrs>
 <table>
-0 <PhKey>1 12</PhKey>
-1 <PhKey>1 12</PhKey>
-2 <PhKey>1 12</PhKey>
-3 <PhKey>1 12</PhKey>
+0 <PhKey>1 6</PhKey>
+1 <PhKey>1 6</PhKey>
+2 <PhKey>1 6</PhKey>
+3 <PhKey>1 6</PhKey>
 </table>
 </piste>
 <piste><attrs> 0 2</attrs>
@@ -5802,7 +5806,7 @@ _xMouse 1 24
 </table>
 </couchtab>
 </tabobj>
-<pages>0 0 13 0 </pages> <face_common><background><PhColorGradient>0 mult 100 19600 8100 19600 6200 1 <PhColorTab><attrs>10 2</attrs>
+<pages>0 0 13 0 </pages> <face_common><background><PhColorGradient>0 mult 100 1100 3900 1100 2000 1 <PhColorTab><attrs>10 2</attrs>
 <PhColor>
 227 227 250 255
 </PhColor>
@@ -5856,14 +5860,14 @@ Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
 //------- Compos # 115 -------------------------------
 <fillrect><id>115 4 "adjust" 0
 </id>
-<coords>0 0 51 19 non_icon</coords>
+<coords>0 0 39 19 non_icon</coords>
 0 0 0 0 1</fillrect>
 
 
 //------- Compos # 116 -------------------------------
 <fillrect><id>116 4 "forme_sans_nom" 0
 </id>
-<coords>0 0 51 19 non_icon</coords>
+<coords>0 0 39 19 non_icon</coords>
 6 255 255 255 1</fillrect>
 
 
@@ -6458,6 +6462,10 @@ Fixe Non_saisie <var_name>"varNameDefault"</var_name></txtaff>
 <attrs>100 5 10 129  1026 <SpriteFile> "$prog$user/formulaire/" "form_input.phi" </SpriteFile> </attrs>
 <tabobj><table>
 0 <Ph_Piece><id>-1 15 "value" 0
+<options>
+_yMouse 1 104
+_xMouse 1 33
+</options>
 </id>
 <attrs>1 1 1 5 0 -1 0 0 0 0 0 _flag2 32767 "" "" X X 0 0 0 0 0 </attrs>
 <table>
@@ -6776,19 +6784,19 @@ _xMouse 1 36
 //------- Compos # 125 -------------------------------
 <txtaff><id>125 2 "sans_nom" 0
 </id>
-<coords>0 0 123 220 non_icon</coords>
+<coords>0 0 123 123 non_icon</coords>
 <txtstyle>"nulledit" "Arial" 16 0 0 0 0 0 0 "Arial"</txtstyle>
 <txttab><attrs>10 10</attrs>
 "refreshDisplay"
 "displayType"
 "scriptCompiler"
-"scriptWrite"
-"scriptRead"
-"regGetValue"
-"ramGetValue"
+"scriptSet"
+"scriptGet"
+"regGet"
+"ramGet"
 "regSet"
 "ramSet"
-"tabVal2Ram"
+"ramAreaSet"
 </txttab>
 Variable Saisie <var_name>"*"</var_name></txtaff>
 

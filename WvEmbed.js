@@ -2,7 +2,7 @@
 /**********************************************************
  *	Messagerie de page-HTML vers embed, et réciproquement
  *	- Paramétrer ce script : rechercher PARAMETER_TODO. Chaque paramètre est décrit.   
- *	- Voir : documentation.txt
+ *	- Voir : doc_embed_request.txt
  * http://localhost:81/tools/ember_request/wvembed_master.html
  */
 //********************************************************************************************************************
@@ -10,70 +10,6 @@
 //********************************************************************************************************************
 //--------------------------------------------------------------------------------------------------------------------
 // 														  S E R V E U R												 
-//--------------------------------------------------------------------------------------------------------------------
-/**
- * Intègre des variables dans des texte, au format du langage C : %1 = var1, %2=var2...
- * Notez que les balise '%n' sont numérotées à partir de 1
- * Exemple : 'il %2 beau %1' params = ['ici', 'fait'] => 'ils fait beau ici'
- * Paramètres :
- * - varsP : variables à incorporer dans le texte
- * - startP (optionnel=0) : début dans lecture dans le tableau
- *		Note : certaines tables de variables comporte le texte en 1ère case du tableau, startP vaudra 1
- */
-String.prototype.wvVarC=function(varsP, startP){
-	let p = (Array.isArray(varsP))? varsP:arguments;
-	let nb = p.length;
-	let text_ = this;
-	for (let i=startP, j=1; i<nb;i++,j++) {					// inclus dans le message au format C : %1
-		text_=text_.replace('%'+j,p[i]);// ex : printf("il %1 beau", "fait");
-	}
-	return text_;
-}
-class WvEmbedEvent{}
-WvEmbedEvent.error=function(p){
-	let t =[];
-	for(let i=0; i<arguments.length;i++){t.push(arguments[i]);}
-	throw new Error(JSON.stringify(t));
-}
-
-/** §1
- * Exemple de fonction-embed synchrone appelée dans l'embed
- * Les erreurs sont traitée de façon classique par : throw new Error(votre_message_d-erreur);
- * 	=> l'erreur traversera tout le service-request pour être capturer par "catch" dans votre script d'appel.
- * Paramètres / obligatioires et uniques
- * - messages : message envoyé par l'utilisateur
- * Exemple de script utilisateur: 
- *		let result = window.wvEmbedRequest.postWait("Fait-il beau", "onEmbed2", 5000);
- *		- "il fait beau" sera placé dans messageP
- *		- result : recevra la valeur retournée : la réponse  2222	
- */
-WvEmbedEvent.onEmbed2=function(messageP){					// Exemple de fonction synchrone
-	if(messageP===undefined || messageP===null || messageP==="new Error"){ 
-		throw new Error("question absente.");				// L'erreur sera capturée par "catch" 
-	}														// dans votre script d'appel.
-	console.log("Oui je suis l'embed 2 "+messageP);
-	return 2222;
-};
-/**  §1
- * Exemple de fonction-embed asynchrone appelée dans l'embed
- * Les erreurs sont traité de façon identique à la fonction synchrone
- * Paramètres / obligatioires et uniques
- * - messages : message envoyé par l'utilisateur
- * - returned : fonction d'envoi de réponse
- *		cette réponse sera reçu dans le script utilisateur, grâce à une égalité
- * Exemple de script utilisateur: 
- *		let result = window.wvEmbedRequest.postWait("Fait-il beau", "onEmbed1", 5000);
- *		- "il fait beau" sera placé dans messageP
- *		- result : recevra le paramètre de returned() : la réponse "ici Aussi"	
- */
-WvEmbedEvent.onEmbed1=function(messageP, returned){			// *Exemple* de fonction-embed pour "question" :
-	if(messageP===undefined || messageP===null || messageP==="new Error"){ 
-		throw new Error("question absente.");				// L'erreur sera capturée par "catch" 
-	}														// dans votre script d'appel.
-	setTimeout(												
-		(messageP,returned)=>{console.log("Oui je suis l'embed 1"+messageP);returned({tata:111,toto:222,titi:333})}
-		, 3000, messageP, returned);						// Notez que le retour prend le chemin : returned(réponse)
-};	
 //********************************************************************************************************************
 //********************************************************************************************************************
 // 														P R O G R A M M E
@@ -501,7 +437,7 @@ class WvEmbedRequest{
 		 * - pushError()
 		 */
 		static newErrorMessage(errorMessageP, paramsP, serviceP, requestP){
-			if(requestP==null || requestP==undefined) return;
+			if(requestP===null || requestP===undefined) return;
 			let error = {};
 
 			if(paramsP){									// intègre les paramètres
@@ -668,6 +604,241 @@ WvEmbedRequest.init=function(embedNameP){
 };
 WvEmbedRequest.start=function(){WvEmbedRequest.init(WVEMBED_NAME);};
 if(START_EMBEED_REQUEST_IMMEDIATE) WvEmbedRequest.start();
+//--------------------------------------------------------------------------------------------------------------------
+/**
+ * Intègre des variables dans des texte, au format du langage C : %1 = var1, %2=var2...
+ * Notez que les balise '%n' sont numérotées à partir de 1
+ * Exemple : 'il %2 beau %1' params = ['ici', 'fait'] => 'ils fait beau ici'
+ * Paramètres :
+ * - varsP : variables à incorporer dans le texte
+ * - startP (optionnel=0) : début dans lecture dans le tableau
+ *		Note : certaines tables de variables comporte le texte en 1ère case du tableau, startP vaudra 1
+ */
+String.prototype.wvVarC=function(varsP, startP){
+	let p = (Array.isArray(varsP))? varsP:arguments;
+	let nb = p.length;
+	let text_ = this;
+	for (let i=startP, j=1; i<nb;i++,j++) {					// inclus dans le message au format C : %1
+		text_=text_.replace('%'+j,p[i]);// ex : printf("il %1 beau", "fait");
+	}
+	return text_;
+}
+class WvEmbedEvent{}
+	WvEmbedEvent.WV_ERROR_SYS_PARAM_INT = 0;
+	WvEmbedEvent.WV_ERROR_SYS_2_PARAM_INT = 1;
+	WvEmbedEvent.WV_ERROR_SYS_PARAM_TAB = 2;
+	WvEmbedEvent.WV_ERROR_SYS_PARAM_TAB_INT = 3;
+	WvEmbedEvent.WV_ERROR_SYS_PARAM_TAB_MAX = 4;
+	WvEmbedEvent.WV_ERROR_SYS_PARAM_STRING = 5;
+	WvEmbedEvent.WV_ERROR_SYS_NB = 6;
+	WvEmbedEvent.WV_ERRORS_SYS=[										// *PARAMETER_TODO* Messages d'erreurs. A traduire.
+		"%1 Parametre %2 = %3 : valeur entière attendue. limite=[%4,%5]",
+		"%1 Parametre %2,%3 = %4 : 2 valeurs entières attendues\n"+
+			"	> soit [val1,val2], soit 'val1,val2'n"+
+			"	> limite1=[%5,%6], limite1=[%7,%8]",
+		"%1 Parametre %2 = %3 : Un tableau ou un texte-tableau est attendu\n"+
+			"    texte-tableau : avec séparateurs ',' ou ';'\n"+
+			"    ex : '11,22,33;444,555' => [[11,22,33],[444,555]]'",
+		"%1 Parametre %2 = %3 : item error /%4/ Un tableau ou un texte-tableau est attendu\n"+
+			"    Tableau ne comportant que des valeurs entière\n"+
+			"    ex : '11,22,33' => [11,22,33]'",
+
+		"%1 Parametre %2 = %3 : item error /%4/ Un tableau ou un texte-tableau est attendu\n"+
+			"    Tableau ne comportant que des valeurs entière comprises entre %5 et %6\n"+
+			"    ex : '11,22,33' => [11,22,33]'",
+		"%1 Parametre %2 = %3 : un String est attendu.",
+
+	];
+WvEmbedEvent.wEmbedError=function(p){
+	if(p===null||p===undefined) throw new Error(JSON.stringify("Error unknown"));
+	if(Array.isArray(p)){
+		if(p.length<1)throw new Error(JSON.stringify("Error unknown. Array length=0"));
+		let errorNum = parseInt(p[0]);
+		if(!isNaN(errorNum)&& errorNum>=0 && errorNum<WvEmbedEvent.WV_ERROR_SYS_NB){
+			p[0]=WvEmbedEvent.WV_ERRORS_SYS[errorNum];
+		}
+	}else{
+		let errorNum = parseInt(p);
+		if(!isNaN(errorNum)&& errorNum>=0 && errorNum<WvEmbedEvent.WV_ERROR_SYS_NB){
+			p=WvEmbedEvent.WV_ERRORS_SYS[errorNum];
+		}		
+	}
+	let t =[];
+	for(let i=0; i<arguments.length;i++){t.push(arguments[i]);}
+	throw new Error(JSON.stringify(t));
+}
+WvEmbedEvent.paramTab=function(valP, functionP, paramP, separ1P, separ2P){
+	if(!Array.isArray(valP)){
+		if(typeof valP !== 'string'){
+			WvEmbedEvent.wEmbedError(WvEmbedEvent.WV_ERROR_SYS_PARAM_TAB,functionP, paramP,valP );
+		}
+		valP = valP.split(separ1P); 
+	}
+	if(separ2P===null || separ2P===undefined) return valP;
+	
+	let nb=valP.length;
+	for(let i=0; i<nb; i++){
+		let item = valP[i];
+		if(!Array.isArray(item)){
+			if(typeof item !== 'string'){
+				WvEmbedEvent.wEmbedError(WvEmbedEvent.WV_ERROR_SYS_PARAM_TAB,functionP, paramP,valP );
+			}
+			valP[i] = item.split(separ2P);
+		}
+	}
+	return valP;
+}
+
+/**
+ * Pour une fonction ne comportant qu'un seul paramètre entier,
+ * Vérifie ou converti un paramèter en entier
+ * Accepté : nombre, String débutant par un nombre, 
+ *			 tableau dont la 1ère case et nombre ou String débutant par un nombre
+ *			 ex : 1234, "128px", [5678, "n'importe quoi"], [255px,"etc",56789]
+ * Paramètres :
+ * - valP : valeur à traiter. Soit un nombre, un texte ou la 1ère case d'un tablmau
+ * - minP, maxP : valeeurs limites incluse. Ex : 2,10 axceptera 2 et 10
+ * - functionP : nom de la fonction
+ * - paramP : nom du paramètre
+ * Retourne la valeur entière
+ */
+WvEmbedEvent.paramInt=function(valP, functionP, paramP,  minP,maxP){
+	if(minP===null || minP===undefined){min = -999999999; max=999999999};
+	let valMemo = valP;
+	if(Array.isArray(valP)){
+		if(valP.length<1){
+			WvEmbedEvent.wEmbedError(WvEmbedEvent.WV_ERROR_SYS_PARAM_INT,functionP, paramP,valMemo, minP,maxP )	
+		}
+		valP = valP[0];
+	}
+	if(valP===null || valP===undefined){
+		WvEmbedEvent.wEmbedError(ErrorMessageP, errorSourceP, "unknown",maxP);		
+	}
+	valP = parseInt(valP);
+	if(isNaN(valP) || valP<minP || valP>maxP){
+		WvEmbedEvent.wEmbedError(WvEmbedEvent.WV_ERROR_SYS_PARAM_INT,functionP, paramP,valMemo, minP,maxP )
+	}
+	return valP;
+}
+WvEmbedEvent.paramString=function(valP, functionP, paramP){
+	if(valP===null || valP===undefined){
+		WvEmbedEvent.wEmbedError(WvEmbedEvent.WV_ERROR_SYS_PARAM_STRING,functionP, paramP,valP );
+	}
+	if(Array.isArray(valP)){
+		if(valP.length<1){
+			WvEmbedEvent.wEmbedError(WvEmbedEvent.WV_ERROR_SYS_PARAM_STRING,functionP, paramP,valP );
+		}
+		valP=valP[0];
+		if(valP===null || valP===undefined || Array.isArray(valP)){
+			WvEmbedEvent.wEmbedError(WvEmbedEvent.WV_ERROR_SYS_PARAM_STRING,functionP, paramP,valP );
+		}		
+	}
+	return valP;
+}
+WvEmbedEvent.paramTabInt=function(valP, functionP, paramP, separ1P, minP, maxP){
+	if(!Array.isArray(valP)){
+		if(typeof valP !== 'string'){
+			WvEmbedEvent.wEmbedError(WvEmbedEvent.WV_ERROR_SYS_PARAM_TAB_INT,functionP, paramP,valP );
+		}
+		valP = valP.split(separ1P); 
+	}
+	let nb=valP.length;
+	for(let i=0; i<nb; i++){
+		let item = parseInt(valP[i]);
+		if(isNaN(item)){
+			WvEmbedEvent.wEmbedError(WvEmbedEvent.WV_ERROR_SYS_PARAM_TAB_INT,functionP, paramP,valP, item );
+		}
+		if(item<minP || item>maxP){
+			WvEmbedEvent.wEmbedError(WvEmbedEvent.WV_ERROR_SYS_PARAM_TAB_MAX,functionP, paramP,valP, item, minP, maxP );			
+		}
+		valP[i]=item;
+	}
+	return valP;
+}
+/**
+ * Pour une fonction comportant 2 paramètres entiers,
+ * Vérifie ou converti chaque paramèter en entier
+ * Accepté : nombre, String débutant par un nombre, 
+ *			 tableau dont la 1ère case et nombre ou String débutant par un nombre
+ *			 ex : [1234, "128px"],       "5678deg,321,n'importe quoi"
+ *				  retourne [1234,128] et  [5678,321,"n'importe quoi"]
+ * Paramètres :
+ * - valP : valeur à traiter. Soit un nombre, un texte ou la 1ère case d'un tablmau
+ * - min1P, max1P, min2P, max2P : valeeurs limites incluse. Ex : 2,10 axceptera 2 et 10
+ * - functionP : nom de la fonction
+ * - param1P, params2P : nom de chaque paramètre
+ * Retourne un tableau [val1, val2]
+ */
+WvEmbedEvent.paramInt2=function(valP, min1P,max1P, min2P,max2P,functionP, param1P, param2P){
+	let valMemo = valP;
+	if(valP===null || valP===undefined){
+		WvEmbedEvent.wEmbedError(ErrorMessageP, errorSourceP, "%1() params unknown",functionP);		
+	}
+	if(typeof valP === 'string'){
+		valP = valP.split(',');
+	}else{
+		if(!Array.isArray(valP)){
+			WvEmbedEvent.wEmbedError(WvEmbedEvent.WV_ERROR_SYS_2_PARAM_INT,
+				functionP, param1P,param2P,valMemo,min1P,max1P, min2P,max2P);	
+		}
+	}
+	if(valP.length<2){
+		WvEmbedEvent.wEmbedError(WvEmbedEvent.WV_ERROR_SYS_2_PARAM_INT,
+						functionP, param1P,param2P,valMemo,min1P,max1P, min2P,max2P);
+	}
+	if(valP[0]===null || valP[0]===undefined || valP[1]===null || valP[1]===undefined){
+		WvEmbedEvent.wEmbedError(WvEmbedEvent.WV_ERROR_SYS_2_PARAM_INT,
+						functionP, param1P,param2P,valMemo,min1P,max1P, min2P,max2P);
+	}
+	valP[0] = parseInt(valP[0]);
+	valP[1] = parseInt(valP[1]);
+	if(    isNaN(valP[0]) || valP[0]<min1P || valP[0]>max1P
+		|| isNaN(valP[1]) || valP[1]<min2P || valP[1]>max2P){
+		//"%1() Parametre %2 = %3 : valeur entière attendue [%4,%5]"
+		WvEmbedEvent.wEmbedError(WvEmbedEvent.WV_ERROR_SYS_2_PARAM_INT,
+						functionP, param1P,param2P,valMemo,min1P,max1P, min2P,max2P);
+	}
+	return valP;
+}
+
+/** §1
+ * Exemple de fonction-embed synchrone appelée dans l'embed
+ * Les erreurs sont traitée de façon classique par : throw new Error(votre_message_d-erreur);
+ * 	=> l'erreur traversera tout le service-request pour être capturer par "catch" dans votre script d'appel.
+ * Paramètres / obligatioires et uniques
+ * - messages : message envoyé par l'utilisateur
+ * Exemple de script utilisateur: 
+ *		let result = window.wvEmbedRequest.postWait("Fait-il beau", "onEmbed2", 5000);
+ *		- "il fait beau" sera placé dans messageP
+ *		- result : recevra la valeur retournée : la réponse  2222	
+ */
+WvEmbedEvent.onEmbed2=function(messageP){					// Exemple de fonction synchrone
+	if(messageP===undefined || messageP===null || messageP==="new Error"){ 
+		throw new Error("question absente.");				// L'erreur sera capturée par "catch" 
+	}														// dans votre script d'appel.
+	console.log("Oui je suis l'embed 2 "+messageP);
+	return 2222;
+};
+/**  §1
+ * Exemple de fonction-embed asynchrone appelée dans l'embed
+ * Les erreurs sont traité de façon identique à la fonction synchrone
+ * Paramètres / obligatioires et uniques
+ * - messages : message envoyé par l'utilisateur
+ * - returned : fonction d'envoi de réponse
+ *		cette réponse sera reçu dans le script utilisateur, grâce à une égalité
+ * Exemple de script utilisateur: 
+ *		let result = window.wvEmbedRequest.postWait("Fait-il beau", "onEmbed1", 5000);
+ *		- "il fait beau" sera placé dans messageP
+ *		- result : recevra le paramètre de returned() : la réponse "ici Aussi"	
+ */
+WvEmbedEvent.onEmbed1=function(messageP, returned){			// *Exemple* de fonction-embed pour "question" :
+	if(messageP===undefined || messageP===null || messageP==="new Error"){ 
+		throw new Error("question absente.");				// L'erreur sera capturée par "catch" 
+	}														// dans votre script d'appel.
+	setTimeout(												
+		(messageP,returned)=>{console.log("Oui je suis l'embed 1"+messageP);returned({tata:111,toto:222,titi:333})}
+		, 3000, messageP, returned);						// Notez que le retour prend le chemin : returned(réponse)
+};	
 
 //--------------------------------------------------------------------------------------------------------------------
 //   						            E X E M P L E   D E   S C R I P T S   C L I E N T
