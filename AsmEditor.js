@@ -1818,155 +1818,28 @@ WvAssembler.errorDisplay=function(){
 //****************************************************************************************************************************
 //****************************************************************************************************************************
 //****************************************************************************************************************************
-//										T O O L : AJOUTE-TYPE  COMMANDES				
+//**											COMMANDES EXTERNES
 //****************************************************************************************************************************
 //****************************************************************************************************************************
 //****************************************************************************************************************************
 //****************************************************************************************************************************
-
-//****************************************************************************************************************************
-// Pour la converstion de fichers AS -> JSON
-// 1 - Après avoir indiqué le type JS aux dééclarations de variables 
-//      Exemple : <AS> static toto:Machina => <JS> Machina.toto
-// 2 - "AsmDatas.toType()"  recherche toutes les occurence de cette variable pour lui attribute sont TYPE
-//		Exemple : <AS> fc(toto) => <JS> fc(Machina.toto)  
-// Le résultat est dans la console.
-//****************************************************************************************************************************
-AsmEditor.a_maj_ascii = "A".charCodeAt(0);
-AsmEditor.z_maj_ascii = "Z".charCodeAt(0);
-AsmEditor.a_min_ascii = "a".charCodeAt(0);
-AsmEditor.z_min_ascii = "z".charCodeAt(0);
-AsmEditor._0_ascii = "0".charCodeAt(0);
-AsmEditor._9_ascii = "9".charCodeAt(0);
-AsmEditor.___ascii = "_".charCodeAt(0);
-AsmEditor.pt_ascii = ".".charCodeAt(0);
-AsmEditor.ptv_ascii = ";".charCodeAt(0);
-
-
-AsmEditor.toType=function(s){
-	if (!confirm("Conversion de script AS -> JS.\nAvez-vous déjà typé les déclarations de variable?\n")) {
-		return;
-	}
-	let label = "assembleur.";
-	let labelLg = label.length;
-	let pos=0, posPt, posEgal, nom, posFin;
-	let sOut = s;
-	let nomsVus = [];
-	while(true){
-		pos = s.indexOf(label,pos); if(pos<0) break;
-		pos+=labelLg;
-		posPt = s.indexOf(";",pos); if(posPt<0) {alert("j'attends un ';' "+s.substring(pos,pas+100)); return;}
-		posEgal = s.indexOf("=",pos+1);
-		if(posEgal==-1 || posEgal>posPt) posFin=posPt;
-		else							 posFin=posEgal;
-		nom = s.substring(pos,posFin).trim();
-		if(nomsVus.indexOf(nom)>=0) continue;
-		sOut = AsmEditor.toTypeNom(nom,label,sOut);
-		pos=posFin;
-		nomsVus.push(nom);
-	}
-	console.log(sOut);
-};
-AsmEditor.toTypeNom=function(nom,label,s){
-	let nomLg = nom.length;
-	let labelLg = label.length;
-	let posNext= nomLg+labelLg;
-	let pos=0;
-	while(true){
-		pos=s.indexOf(nom, pos); if(pos<0) break;
-		let car = s.charCodeAt(pos-1);
-		if(car==AsmEditor.pt_ascii){pos+=nomLg;continue;}
-		if(  (car>=AsmEditor.a_maj_ascii && car<=AsmEditor.z_maj_ascii)
-		   ||(car>=AsmEditor.a_min_ascii && car<=AsmEditor.z_min_ascii)
- 	       ||(car>=AsmEditor._0_ascii && car<=AsmEditor._9_ascii)
-		   || car == AsmEditor.___ascii){pos+=nomLg;continue;}
-		car = s.charCodeAt(pos+nomLg); 
-		if(  (car>=AsmEditor.a_maj_ascii && car<=AsmEditor.z_maj_ascii)
-		   ||(car>=AsmEditor.a_min_ascii && car<=AsmEditor.z_min_ascii)
- 	       ||(car>=AsmEditor._0_ascii && car<=AsmEditor._9_ascii)
-		   || car == AsmEditor.___ascii) {pos+=nomLg;continue;}
-
-		s=s.substring(0,pos)+label+s.substring(pos);
-		pos+=posNext;
-	} 
-	return s;
-};
-AsmEditor.commands=function(commandP){
-		if(commandP==null) commandP=AsmEditor.input.value;;
-		if((commandP=commandP.trim()).length<1){
-			alert("script de commandes\nnom_instr1,param1,param2...;nom_instr2,param1,param2...;...\nExemple : ramPutValues(12, 123,654,78; exe;");
-			return;
-		}
-		let command = commandP.substring(0,2); if(command=="2t" || command=="2T") {AsmEditor.toType(commandP); return;}
-		
-		let comms = commandP.split(";");
-		let nb = comms.length;
-		for(let i=0; i<nb; i++){
-			let comm = comms[i].trim();
-			if(comm.length<1) continue;
-			AsmEditor.command(comm);
-		}
-};
-AsmEditor.command=function(commandP){
-
-		if(commandP.trim().length<1){
-			return;
-		}
-		let fc = commandP.split(",");
-		let nom = fc[0].trim();
-		//console.log(nom.substring(0,2));
-		if(nom.length>=2 && nom.substring(0,2)=="//") return;
-		if(AsmEditor[nom]==null){
-			alert("script de command - commande '"+nom+"' inconnue\n Voir inspect/debug");
-			console.log("Les commandes :\n"+
-			"    ramPutValues ou ST,num-ram,val1,val2...\n"+
-			"    regPutValues ou LD,num-ram,val1,val2...\n"+
-			"    exe ou EXE ; execute 1 instruction\n"+
-			"    asmCompiler ou ASM,instr1,instr2... ; Compile une script assembleur\n"+
-			"    2t,script : ajoute le type devant les variables\n"+
-			"");
-			return;
-		}
-		AsmEditor[nom](fc); 
-};
-AsmEditor.ST=function(paramsP){AsmEditor.ramPutValues(paramsP);};
-AsmEditor.ramPutValues=function(paramsP){
-		let start = parseInt(paramsP[1]);
-		if(start<0 || start>=256){
-			alert("start (1er paramètre) doit être compris entre 0 et 255");
-			return;
-		}
-		let nb = paramsP.length;
-		for(let i=2; i<nb; i++){AsmDatas.ramPutValue(parseInt(paramsP[i]), start++);}
-		
-};
-AsmEditor.LD=function(paramsP){AsmEditor.regPutValues(paramsP);};
-
-AsmEditor.regPutValues=function(paramsP){
-		let start = parseInt(paramsP[1]);
-		if(start<0 || start>=7){
-			alert("start (1er paramètre) doit être compris entre 0 et 255");
-			return;
-		}
-		let nb = paramsP.length;
-		for(let i=2; i<nb; i++){AsmDatas.regPutValue(parseInt(paramsP[i]), start++);}
-		
-};
-AsmEditor.EXE1=function(paramsP){WvInstr.exePP();};
-AsmEditor.exe1=function(paramsP){WvInstr.exePP();};
-AsmEditor.ASM=function(paramsP){AsmEditor.asmCompiler(paramsP);};
-AsmEditor.asmCompiler=function(paramsP){
-	paramsP[0]=";"+paramsP[0];
-	WvAssembler.compilerLignes(paramsP);
-};
-
-AsmEditor.scriptCompiler_=function(paramsP){
-	paramsP[0]=";"+paramsP[0];
-	WvAssembler.compilerScript(paramsP);
-};
-
-
-
+/*
+- regSet("val, numRegistre")
+- ramSet("val, numOctet")
+- regGet(numRegistre)
+- ramGet(numOctet)
+- ramAreaSet ("val1,val2,val3,...; pos_start")
+- scriptGet()
+- scriptSet("script")
+- scriptCompil()
+- exe1step()
+- exeStepByStep()
+- exeStepByStepStop
+- exe()
+- displayType(numType) 
+	0=decimal, 1=hexadécimal, 2=interrupteurs(binaire)
+- refreshDisplay()
+*/
 //_________________________
 WvEmbedEvent.ERROR_TYPE_DISPLAY		= 0;
 WvEmbedEvent.ERROR_TABVAL_NOT_TAB	= 1;
@@ -1989,12 +1862,103 @@ WvEmbedEvent.MESSAGES=[
 	"%1(message) * 'numOctet' doit être un nombre compris dans [0,%3] : %2\n format : numCase",
 	"%1(message) * 'script' inscrit dans la zone de saisie script, devrait etre un texte :\n /%2/",
 ];
+WvEmbedEvent.DISPLAY_TYPE = {n:0,d:0,e:0,h:1,i:2,b:2};
+
 /**
- * Rafraichit les méémoires. 
+ * Ecrit une valeur dans une mémoire de la RAM.
+ * paramètre / tableau : [valeur 0 à 255, numOctet 0 à 255]
+ */
+WvEmbedEvent.ramSet=function(messageP){
+	let params = WvEmbedEvent.paramInt2(messageP, 0,255, 0,255,"ramSet", "valeur", "num-mémoire");
+	AsmDatas.ramPutValue( params[0] , params[1]);
+	return true;
+}
+/**
+ * Lit la valeur d'une mémoire de la RAM
+ * Paramètre / String
+ * - int octetNum : numéro d'octet à lire
+ */
+WvEmbedEvent.ramGet=function(messageP, returnP){
+	return AsmDatas.ramGetValue(WvEmbedEvent.paramInt( messageP,"ramGet()", "numero de mémoire", 0,255));
+}
+/**
+ * Lit la valeur d(un registre
+ * Paramètre / String
+ * - int regNum : numéro d'octet à lire
+ */
+WvEmbedEvent.regGet=function(messageP, returnP){
+	return AsmDatas.regGetValue(WvEmbedEvent.paramInt( messageP,"ramGet()", "numero de mémoire", 0,7));
+}
+/**
+ * Ecrit une valeur dans un registre.
+ * pramètre / tableau : [valeur, numRegistre 0à7]
+ */
+WvEmbedEvent.regSet=function(messageP){
+	let params = WvEmbedEvent.paramInt2(messageP, 0,255, 0,7,"regSet", "valeur", "num-mémoire");
+	AsmDatas.regPutValue( params[0] , params[1]);
+	return true;
+}
+/**
+ * Remplit une zone de la RAM
+ * Paramètres :
+ * - messageP / tableau = [[mems], start]
+ *				ou "v0,v1,v2...;start"
+ *		- mems : suite de nombres à placer dans la mémoire
+ * 		- position de départ de la pause 
+ */
+WvEmbedEvent.ramAreaSet=function(messageP, returnP, numType){
+	messageP=WvEmbedEvent.paramTab(messageP, "ramAreaSet", "valeurs, start", ';');
+	let tab = WvEmbedEvent.paramTabInt(messageP[0], "ramAreaSet", "valeurs", ',', 0, 255);
+	let start = WvEmbedEvent.paramInt(messageP[1], "ramAreaSet", "start", 0, 255);
+	AsmDatas.tabVal2Ram( tab , start);
+	return true;
+}
+/**
+ * Lit le programme inscrit dans la zone script 
+ * Aucun paramètre
+ */
+WvEmbedEvent.scriptGet=function(){
+	return AsmEditor.scriptRead();
+}
+/**
+ * Ecrit un programme dans la zone script 
+ * Paramètre / string
+ * - Texte à écrire dans la zone script
+ */
+WvEmbedEvent.scriptSet=function(scriptP){
+	return AsmEditor.scriptWrite(WvEmbedEvent.paramString( scriptP,"scriptSet()", "script"));
+}
+/**
+ * Compile le programme inscrit dans la zone script 
+ * Paramètre / string
+ * - Texte à écrire dans la zone script
+ */
+WvEmbedEvent.scriptCompiler=function(messageP, returnP){
+	return AsmEditor.scriptCompiler();
+}
+/**
+ * Avance l'exécution du programme d'une instruction
+ * Aucun paramètre
+ */
+WvEmbedEvent.exe1step=function(){AsmEditor.exe1step();return true;};
+WvEmbedEvent.exeStepByStep=function(messageP, returnP){
+	AsmEditor.exeStepByStep();	
+}
+/**
+ * Exécute le programme pas-à-pas
+ * Aucun paramètre
+ */
+WvEmbedEvent.exeStepByStepStop(messageP, returnP){AsmEditor.exeStepByStepStop();return true;};
+/**
+ * Exécute le programme jusqu'au point d'arrêt
+ * Aucun paramètre
+ */
+WvEmbedEvent.exe=function(messageP, returnP){AsmEditor.exe();return true;};
+/**
+ * Rafraichit les mémoires. 
  * Aucun parammètre
  */
-WvEmbedEvent.refreshDisplay=function(messageP, returnP){AsmEditor.refreshDisplay();return true;};
-WvEmbedEvent.DISPLAY_TYPE = {n:0,d:0,e:0,h:1,i:2,b:2};
+WvEmbedEvent.refreshDisplay=function(){AsmEditor.refreshDisplay();return true;};
 /**
  * Modife le type d'affichage : 
  * Paramètre / String : 
@@ -2020,128 +1984,4 @@ WvEmbedEvent.displayType=function(messageP, returnP){
 	AsmEditor.displayType(n);
 	return true;
 };
-/**
- * Avance l'exécution du programme d'une instruction
- * Aucun paramètre
- */
-WvEmbedEvent.exe1step=function(messageP, returnP){AsmEditor.exe1step();return true;};
-/**
- * Exécute le programme pas-à-pas
- * Aucun paramètre
- */
-WvEmbedEvent.exeStepByStepStop=function(messageP, returnP){AsmEditor.exeStepByStepStop();return true;};
-/**
- * Exécute le programme jusqu'au point d'arrêt
- * Aucun paramètre
- */
-WvEmbedEvent.exe=function(messageP, returnP){AsmEditor.exe();return true;};
-/**
- * Remplit une zone de la RAM
- * Paramètres :
- * - messageP / tableau = [[mems], start]
- *				ou "v0,v1,v2...;start"
- *		- mems : suite de nombres à placer dans la mémoire
- * 		- position de départ de la pause 
- */
-WvEmbedEvent.ramAreaSet=function(messageP, returnP, numType){
-	messageP=WvEmbedEvent.paramTab(messageP, "ramAreaSet", "valeurs, start", ';');
-	let tab = WvEmbedEvent.paramTabInt(messageP[0], "ramAreaSet", "valeurs", ',', 0, 255);
-	let start = WvEmbedEvent.paramInt(messageP[1], "ramAreaSet", "start", 0, 255);
-	AsmDatas.tabVal2Ram( tab , start);
-		/*
-	let tab;
-	let start;
-	if(!Array.isArray(messageP)){
-		if(typeof messageP !== 'string'){
-			WvEmbedEvent.wEmbedError(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TABVAL_NOT_TAB], messageP);		
-		}
-		messageP = messageP.split(';');
-	}
-	if(messageP.length!=2){
-		WvEmbedEvent.wEmbedError(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TABVAL_NOT_3], messageP);				
-	}
-	tab = messageP[0];
-	start = parseInt(messageP[1]);	
-	if(!Array.isArray(tab) || tab.length==0){
-		WvEmbedEvent.wEmbedError(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TABVAL0_NOT_TAB], tab); 				
-	}
-	if(isNaN(start) || start<0 || start>255){
-		WvEmbedEvent.wEmbedError(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_TABVAL1_NOT_START], start);							
-	}
-	AsmDatas.tabVal2Ram( tab , start);
-	*/
-	
-	return true;
-}
-/**
- * Ecrit une valeur dans une mémoire de la RAM.
- * paramètre / tableau : [valeur 0 à 255, numOctet 0 à 255]
- */
-WvEmbedEvent.ramSet=function(messageP, returnP){
-	let params = WvEmbedEvent.paramInt2(messageP, 0,255, 0,255,"ramSet", "valeur", "num-mémoire");
-	AsmDatas.ramPutValue( params[0] , params[1]);
-	return true;
-}
-/**
- * Ecrit une valeur dans un registre.
- * pramètre / tableau : [valeur, numRegistre 0à7]
- */
-WvEmbedEvent.regSet=function(messageP, returnP){
-	let params = WvEmbedEvent.paramInt2(messageP, 0,255, 0,7,"regSet", "valeur", "num-mémoire");
-	AsmDatas.regPutValue( params[0] , params[1]);
-	return true;
-}
-/**
- * Lit la valeur d'une mémoire de la RAM
- * Paramètre / String
- * - int octetNum : numéro d'octet à lire
- */
-WvEmbedEvent.ramGet=function(messageP, returnP){
-	return AsmDatas.ramGetValue(WvEmbedEvent.paramInt( messageP,"ramGet()", "numero de mémoire", 0,255));
-}
-/**
- * Lit la valeur d(un registre
- * Paramètre / String
- * - int regNum : numéro d'octet à lire
- */
-WvEmbedEvent.regGet=function(messageP, returnP){
-	return AsmDatas.regGetValue(WvEmbedEvent.paramInt( messageP,"ramGet()", "numero de mémoire", 0,7));
-}
-/**
- * Lit le programme inscrit dans la zone script 
- * Aucun paramètre
- */
-WvEmbedEvent.scriptGet=function(){
-	return AsmEditor.scriptRead();
-}
-/**
- * Ecrit un programme dans la zone script 
- * Paramètre / string
- * - Texte à écrire dans la zone script
- */
-WvEmbedEvent.scriptSet=function(scriptP){
-	
-	/*
-	if(typeof scriptP !== 'string'){
-		if(!Array.isArray(scriptP) && scriptP.length<1 && typeof scriptP[0] !== 'string'){
-				WvEmbedEvent.wEmbedError(WvEmbedEvent.MESSAGES[WvEmbedEvent.ERROR_SCRIPT_ERROR], "scriptWrite", scriptP);
-		}
-		scriptP=scriptP[0];
-	}
-	*/
-	return AsmEditor.scriptWrite(WvEmbedEvent.paramString( scriptP,"scriptSet()", "script"));
-}
-/**
- * Compile le programme inscrit dans la zone script 
- * Paramètre / string
- * - Texte à écrire dans la zone script
- */
-WvEmbedEvent.scriptCompiler=function(messageP, returnP){
-	return AsmEditor.scriptCompiler();
-}
-WvEmbedEvent.errorTest=function(messageP, returnP){
-	WvEmbedEvent.wEmbedError("%3%2%1",111,222,333); 		
-}
-WvEmbedEvent.exeStepByStep=function(messageP, returnP){
-	AsmEditor.exeStepByStep();	
-}
+
