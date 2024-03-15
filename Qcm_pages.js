@@ -1,3 +1,0 @@
-function Qcm_pages(){
-	
-}; 
