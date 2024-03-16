@@ -1,16 +1,8 @@
-<<<<<<< HEAD
 // CRISTALPUTER V01.001
 /**********************************************************
  *	Messagerie de page-HTML vers embed, et réciproquement
  *	- Paramétrer ce script : rechercher PARAMETER_TODO. Chaque paramètre est décrit.   
  *	- Voir : doc_embed_request.txt
-=======
-
-/**********************************************************
- *	Messagerie de page-HTML vers embed, et réciproquement
- *	- Paramétrer ce script : rechercher PARAMETER_TODO. Chaque paramètre est décrit.   
- *	- Voir : documentation.txt
->>>>>>> dc1731d19647b380a6b1f43ea1a8004120d97022
  * http://localhost:81/tools/ember_request/wvembed_master.html
  */
 //********************************************************************************************************************
@@ -18,73 +10,6 @@
 //********************************************************************************************************************
 //--------------------------------------------------------------------------------------------------------------------
 // 														  S E R V E U R												 
-<<<<<<< HEAD
-=======
-//--------------------------------------------------------------------------------------------------------------------
-/**
- * Intègre des variables dans des texte, au format du langage C : %1 = var1, %2=var2...
- * Notez que les balise '%n' sont numérotées à partir de 1
- * Exemple : 'il %2 beau %1' params = ['ici', 'fait'] => 'ils fait beau ici'
- * Paramètres :
- * - varsP : variables à incorporer dans le texte
- * - startP (optionnel=0) : début dans lecture dans le tableau
- *		Note : certaines tables de variables comporte le texte en 1ère case du tableau, startP vaudra 1
- */
-String.prototype.wvVarC=function(varsP, startP){
-	let p = (Array.isArray(varsP))? varsP:arguments;
-	let nb = p.length;
-	let text_ = this;
-	for (let i=startP, j=1; i<nb;i++,j++) {					// inclus dans le message au format C : %1
-		text_=text_.replace('%'+j,p[i]);// ex : printf("il %1 beau", "fait");
-	}
-	return text_;
-}
-class WvEmbedEvent{}
-WvEmbedEvent.error=function(p){
-	let t =[];
-	for(let i=0; i<arguments.length;i++){t.push(arguments[i]);}
-	throw new Error(JSON.stringify(t));
-}
-
-/** §1
- * Exemple de fonction-embed synchrone appelée dans l'embed
- * Les erreurs sont traitée de façon classique par : throw new Error(votre_message_d-erreur);
- * 	=> l'erreur traversera tout le service-request pour être capturer par "catch" dans votre script d'appel.
- * Paramètres / obligatioires et uniques
- * - messages : message envoyé par l'utilisateur
- * Exemple de script utilisateur: 
- *		let result = window.wvEmbedRequest.postWait("Fait-il beau", "onEmbed2", 5000);
- *		- "il fait beau" sera placé dans messageP
- *		- result : recevra la valeur retournée : la réponse  2222	
- */
-WvEmbedEvent.onEmbed2=function(messageP){					// Exemple de fonction synchrone
-	if(messageP===undefined || messageP===null || messageP==="new Error"){ 
-		throw new Error("question absente.");				// L'erreur sera capturée par "catch" 
-	}														// dans votre script d'appel.
-	console.log("Oui je suis l'embed 2 "+messageP);
-	return 2222;
-};
-/**  §1
- * Exemple de fonction-embed asynchrone appelée dans l'embed
- * Les erreurs sont traité de façon identique à la fonction synchrone
- * Paramètres / obligatioires et uniques
- * - messages : message envoyé par l'utilisateur
- * - returned : fonction d'envoi de réponse
- *		cette réponse sera reçu dans le script utilisateur, grâce à une égalité
- * Exemple de script utilisateur: 
- *		let result = window.wvEmbedRequest.postWait("Fait-il beau", "onEmbed1", 5000);
- *		- "il fait beau" sera placé dans messageP
- *		- result : recevra le paramètre de returned() : la réponse "ici Aussi"	
- */
-WvEmbedEvent.onEmbed1=function(messageP, returned){			// *Exemple* de fonction-embed pour "question" :
-	if(messageP===undefined || messageP===null || messageP==="new Error"){ 
-		throw new Error("question absente.");				// L'erreur sera capturée par "catch" 
-	}														// dans votre script d'appel.
-	setTimeout(												
-		(messageP,returned)=>{console.log("Oui je suis l'embed 1"+messageP);returned({tata:111,toto:222,titi:333})}
-		, 3000, messageP, returned);						// Notez que le retour prend le chemin : returned(réponse)
-};	
->>>>>>> dc1731d19647b380a6b1f43ea1a8004120d97022
 //********************************************************************************************************************
 //********************************************************************************************************************
 // 														P R O G R A M M E
@@ -512,11 +437,7 @@ class WvEmbedRequest{
 		 * - pushError()
 		 */
 		static newErrorMessage(errorMessageP, paramsP, serviceP, requestP){
-<<<<<<< HEAD
 			if(requestP===null || requestP===undefined) return;
-=======
-			if(requestP==null || requestP==undefined) return;
->>>>>>> dc1731d19647b380a6b1f43ea1a8004120d97022
 			let error = {};
 
 			if(paramsP){									// intègre les paramètres
@@ -628,7 +549,6 @@ class WvEmbedRequest{
 				if (result!=null && result!=undefined) o(result);
 			}  
 		).catch((e)=>{										// Intercepte les erreur levée par les fonctions-embed
-<<<<<<< HEAD
 			let errorMessage=e.message;
 			try{
 				errorMessage=JSON.parse(e.message);
@@ -644,20 +564,6 @@ class WvEmbedRequest{
 				}
 			}
 			this.WvEmbedErrors.pushError(requestP, this.ERROR_IN_EVENT, this, [errorMessage]);
-=======
-			e=JSON.parse(e.message);
-			//alert(e);
-
-			if(Array.isArray(e)){							// L'erreur générée par la fonction embed est un tableau 
-				if(e.length>1){							// Il comporte des variables à intégrer
-					if(Array.isArray(e[1]))				// format [texte,[var1,var2,var3,...]]
-						e = e[0].wvVarC(e[1]);				
-					else
-						e = e[0].wvVarC(e, 1);			// format [texte,var1,var2,var3,...] 
-				}
-			}
-			this.WvEmbedErrors.pushError(requestP, this.ERROR_IN_EVENT, this, [e]);
->>>>>>> dc1731d19647b380a6b1f43ea1a8004120d97022
 			this.answerPost(requestP);
 		})
 	};
@@ -698,7 +604,6 @@ WvEmbedRequest.init=function(embedNameP){
 };
 WvEmbedRequest.start=function(){WvEmbedRequest.init(WVEMBED_NAME);};
 if(START_EMBEED_REQUEST_IMMEDIATE) WvEmbedRequest.start();
-<<<<<<< HEAD
 //--------------------------------------------------------------------------------------------------------------------
 /**
  * Intègre des variables dans des texte, au format du langage C : %1 = var1, %2=var2...
@@ -934,8 +839,6 @@ WvEmbedEvent.onEmbed1=function(messageP, returned){			// *Exemple* de fonction-e
 		(messageP,returned)=>{console.log("Oui je suis l'embed 1"+messageP);returned({tata:111,toto:222,titi:333})}
 		, 3000, messageP, returned);						// Notez que le retour prend le chemin : returned(réponse)
 };	
-=======
->>>>>>> dc1731d19647b380a6b1f43ea1a8004120d97022
 
 //--------------------------------------------------------------------------------------------------------------------
 //   						            E X E M P L E   D E   S C R I P T S   C L I E N T
